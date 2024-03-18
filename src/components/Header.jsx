@@ -4,19 +4,19 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import chromaLogo from '../assets/chroma-logo.png'
 
+
 function Header() {
   
     return (
   
-      <Navbar expand="lg" className="bg-body-tertiary">
+      <Navbar style={{width: '100vw', fontSize: '25px'}} expand="lg" className="bg-body-tertiary">
         <Container>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand style={{fontSize: '45px'}} >
             <img
                 alt=""
                 src={chromaLogo}
-                width="50"
-                height="50"
-                className="d-inline-block align-top"
+                width="165"
+                height="150"
               />{' '}
             Chroma
           </Navbar.Brand>
