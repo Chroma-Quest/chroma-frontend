@@ -22,7 +22,8 @@ function Header() {
           </Navbar.Brand>
           <Nav className="">
             <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Testing</Nav.Link>
+            <Nav.Link href="#link">Simulator</Nav.Link>
+            <Nav.Link href="#link">Info</Nav.Link>
             <Nav.Link href="#link">Feedback</Nav.Link>
             <Nav.Link href="#link">About Us</Nav.Link>
           </Nav>
