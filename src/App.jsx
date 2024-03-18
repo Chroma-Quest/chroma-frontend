@@ -1,7 +1,9 @@
-import { useState } from 'react'
-import Header from './components/Header.jsx'
-import Footer from './components/Footer.jsx'
-import './styles/App.css'
+
+import { useState } from 'react';
+import Header from './components/Header.jsx';
+import './styles/App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -9,8 +11,8 @@ function App() {
   return (
     <>
       <Header />
-      <h1> Testing 123 </h1>
       <Footer />
+
     </>
   )
 }
