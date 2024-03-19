@@ -2,7 +2,7 @@
 # Project Name
 
 **Author**: Kawika Reveira, Justin Cheeseman, Ahmed Elnogoumi, Mak Trnka, Brock Britton, John Gause
-**Version**: 1.0.0
+**Version**: 1.0.2
 
 ## Overview
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
@@ -13,14 +13,12 @@
 ## Architecture
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
 
-## Change Log
-<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
-
-01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
+## Change Log #
 
 03-18-2024 11:07pm Updated README.md to add Documentation Template, Added Time estimates template.
 03-18-2024 2:00pm Added Header and Footer to App.jsx.
 03-19-2024 11:18am Added canvas and piano buttons to Simulator Page.
+03-19-2024 2:00pm Added color to letters feature with toggle button on Info page.
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
@@ -52,6 +50,18 @@ Actual time needed to complete: _____
 
 *************************************************************************************************************************
 
+Name of feature: Color to Letters
+
+Estimate of time needed to complete: 30 minutes
+
+Start time: 1:15pm
+
+Finish time: 2:00pm
+
+Actual time needed to complete: 45 minutes
+
+*************************************************************************************************************************
+
 Name of feature: ________________________________
 
 Estimate of time needed to complete: _____
@@ -61,6 +71,7 @@ Start time: _____
 Finish time: _____
 
 Actual time needed to complete: _____
+
 
 # Project Overview #
 
