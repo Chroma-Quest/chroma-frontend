@@ -50,12 +50,12 @@ Actual time needed to complete: _____
 
 # Project Overview #
 
-![Project Overview Image](<assets/Project-Overview.png>)
+![Project Overview Image](<src/assets/Project-Overview.png>)
 
 # User Stories #
 
-![User Stories](<assets/User-Stories.png>)
+![User Stories](<src/assets/User-Stories.png>)
 
 # Wireframe #
 
-![Wireframe](assets/Wireframe.png)
+![Wireframe](src/assets/Wireframe.png)
