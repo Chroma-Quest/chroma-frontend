@@ -1,10 +1,12 @@
-
-
-canvas { 
-    margin: auto;
+canvas {
+    margin: 50px auto; /* Add margin to center the canvas vertically and horizontally */
     display: block;
-    width: 80vw;
-    height: 600px;
+    width: 80%; /* Adjust width to take up 80% of the container */
+    max-width: 800px; /* Set maximum width to prevent it from stretching too wide */
+    height: 400px; /* Adjust height as needed */
     overflow: hidden;
-    background-color: #353935;
+    padding: 20px; /* Add padding for spacing around the canvas */
+    background-color: #353935; /* Dark green background */
+    border-radius: 10px; /* Add border radius for a rounded appearance */
+    box-shadow: 0 0 40px rgba(0, 0, 0, 1); /* Add box shadow for depth */
 }
