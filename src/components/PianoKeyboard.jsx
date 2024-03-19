@@ -15,17 +15,18 @@ const PianoKeyboard = () => {
     <Container>
       <Row className="justify-content-md-center">
         {whiteKeys.map((key, index) => (
-          <Col key={index} xs="auto" style={{ position: 'relative', height: '100px', width: '60px', marginBottom: '10px' }}>
+          <Col key={index} xs="auto" style={{ position: 'relative', height: '100px', width: '60px', margin: '10px 1px' }}>
             {blackKeys[index] && (
               <Button
                 variant="dark"
                 onClick={() => handleKeyDown(blackKeys[index])}
                 style={{
                   position: 'absolute',
-                  width: "70%",
+                  width: "75%",
                   top: '0',
                   left: '70%',
                   zIndex: 1,
+                  textAlign: 'center'
                 }}
               >
                 {blackKeys[index]}
