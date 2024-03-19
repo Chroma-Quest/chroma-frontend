@@ -29,7 +29,7 @@ function FireworksCanvas() {
 
         function handleKeydown(event) {
             if (event.code === "Space") {
-                createFirework("skyblue");
+                createFirework("#008000");
             } 
         }
 
@@ -92,7 +92,7 @@ function FireworksCanvas() {
 
             // this calculates the delay from a firework 
             // if (this.s > 2000/ms) {
-                createParticles(typecount, 100, this.x, this.y, this.color);
+                createParticles(typecount, 300, this.x, this.y, this.color);
                 //createParticles(typecount, 100, 90, 90, this.color);
                 this.del = true;
             // } else {
@@ -146,7 +146,7 @@ function FireworksCanvas() {
         this.wind = 0;
         this.type = 1;
         this.opacity = 1;
-        this.s = 0;
+        this.s = 10;
         this.scale = 1;
         this.color = '#FFF';
         this.del = false;

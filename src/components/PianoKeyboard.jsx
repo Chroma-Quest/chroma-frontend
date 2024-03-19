@@ -5,6 +5,7 @@ const PianoKeyboard = () => {
   const whiteKeys = ["C", "D", "E", "F", "G", "A", "B", "C"];
   const blackKeys = ["C#", "D#", "", "F#", "G#", "A#", ""];
   const keyBind = ["A", "W", "S", "E", "D", "F", "T", "G", "Y", "H", "U", "J"];
+  const keyColors = ["#FFFF00", "#00FFFF", "#228B22", "#DC143C", "#87CEEB", "#9370DB", "#DAA520", "#008000", "#FF6F61", "#FF8C00", "#4B0082", "#FF007F", "#FFFF00"]
 
   const handleKeyDown = (key) => {
     console.log(`Pressed key: ${key}`);
