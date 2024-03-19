@@ -9,7 +9,7 @@ function Header() {
   
     return (
   
-      <Navbar style={{width: '100vw', fontSize: '25px'}} expand="lg" className="bg-body-tertiary">
+      <Navbar style={{width: '100vw', fontSize: '25px'}} >
         <Container>
           <Navbar.Brand style={{fontSize: '45px'}} >
             <img
