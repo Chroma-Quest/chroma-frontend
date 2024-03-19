@@ -1,10 +1,11 @@
 
+import '../styles/FireworksCanvas.css';
 
 function FireworksCanvas() {
 
     return (
         <div id="canvas-container">
-            <canvas id="canvas"></canvas>
+            <canvas style={{marginBottom: "45px"}} id="canvas"></canvas>
         </div>
     )
 }
