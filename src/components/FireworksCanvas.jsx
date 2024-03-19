@@ -1,4 +1,5 @@
 
+import '../styles/FireworksCanvas.css';
 
 function FireworksCanvas() {
 

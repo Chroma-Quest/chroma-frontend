@@ -21,11 +21,11 @@ function Header() {
             Chroma
           </Navbar.Brand>
           <Nav className="">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Simulator</Nav.Link>
-            <Nav.Link href="#link">Info</Nav.Link>
-            <Nav.Link href="#link">Feedback</Nav.Link>
-            <Nav.Link href="#link">About Us</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/simulator">Simulator</Nav.Link>
+            <Nav.Link href="/info">Info</Nav.Link>
+            <Nav.Link href="/feedback">Feedback</Nav.Link>
+            <Nav.Link href="/about">About Us</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
