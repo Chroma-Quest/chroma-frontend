@@ -1,9 +1,31 @@
 import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
+import Ab5 from '../assets/piano-sounds/Piano.ff.Ab5.mp3';
 
 const PianoKeyboard = () => {
   const whiteKeys = ["C", "D", "E", "F", "G", "A", "B", "C"];
+  const whiteSounds = [
+     "Piano.ff.C5.aiff", 
+     "Piano.ff.D5.aiff", 
+     "Piano.ff.E5.aiff", 
+     "Piano.ff.F5.aiff", 
+     "Piano.ff.G5.aiff", 
+     "Piano.ff.A5.aiff", 
+     "Piano.ff.B5.aiff", 
+     "Piano.ff.C6.aiff" 
+   ];
+
   const blackKeys = ["C#", "D#", "", "F#", "G#", "A#", ""];
+  const blackSounds = [
+    "Piano.ff.C#5.aiff",
+    "Piano.ff.D#5.aiff",
+    "",
+    "Piano.ff.F#5.aiff",
+    "Piano.ff.G#5.aiff",
+    "Piano.ff.A#5.aiff",
+    ""
+  ];
+
   const keyBind = ["A", "W", "S", "E", "D", "F", "T", "G", "Y", "H", "U", "J"];
   const keyColors = ["#FFFF00", "#00FFFF", "#228B22", "#DC143C", "#87CEEB", "#9370DB", "#DAA520", "#008000", "#FF6F61", "#FF8C00", "#4B0082", "#FF007F", "#FFFF00"]
 
