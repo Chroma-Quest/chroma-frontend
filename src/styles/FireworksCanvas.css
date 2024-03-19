@@ -1,0 +1,10 @@
+
+
+canvas { 
+    margin: auto;
+    display: block;
+    width: 80vw;
+    height: 600px;
+    overflow: hidden;
+    background-color: #353935;
+}

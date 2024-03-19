@@ -19,6 +19,8 @@
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
 
 03-18-2024 11:07pm Updated README.md to add Documentation Template, Added Time estimates template.
+03-18-2024 2:00pm Added Header and Footer to App.jsx.
+03-19-2024 11:18am Added canvas and piano buttons to Simulator Page.
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
@@ -26,11 +28,23 @@
 
 # Time Estimates #
 
-Name of feature: ________________________________
+Name of feature: Header and Footer
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 25 minutes
 
-Start time: _____
+Start time: 10:00
+
+Finish time: 10:30
+
+Actual time needed to complete: 30 minutes
+
+*************************************************************************************************************************
+
+Name of feature: Simulator Page - canvas and piano
+
+Estimate of time needed to complete: 1.5 hours
+
+Start time: 10:30
 
 Finish time: _____
 
