@@ -14,7 +14,7 @@ import A5 from '../assets/piano-sounds/mp3/Piano.ff.A5.mp3';
 import Asharp5 from '../assets/piano-sounds/mp3/Piano.ff.Bb5.mp3';
 import B5 from '../assets/piano-sounds/mp3/Piano.ff.B5.mp3';
 import C6 from '../assets/piano-sounds/mp3/Piano.ff.C6.mp3';
-
+import '../styles/PianoKeyboard.css';
 
 const labels_colors_notes = {
   'a': {
@@ -104,31 +104,17 @@ const PianoKeyboard = (props) => {
   window.addEventListener("keydown", handleKeyDown);
 
   return (
-    <Container style={{height: '200px', width: '700px'}}>
+    <Container className="Container">
       <Row className="justify-content-md-center">
         {whiteKeys.map((key, index) => (
-          <Col key={index} xs="auto" style={{ position: 'relative', height: '100px', width: '60px', margin: '10px 1px' }}>
+          <Col key={index} xs="auto" class="white-key-col">
             {blackKeys[index] && (
               <>
-              <p style={{position: 'absolute',
-                  width: "75%",
-                  height: "60%",
-                  top: '0',
-                  left: '80%',
-                  color: 'darkslategrey',
-                  textAlign: 'center'}}> {topKeyBind[index]} </p>
+              <p className="black-key-desc"> {topKeyBind[index]} </p>
               <Button
                 variant="dark"
                 onClick={() => handleClick(blackKeys[index])}
-                style={{
-                  position: 'absolute',
-                  width: "75%",
-                  height: "60%",
-                  top: '30px',
-                  left: '80%',
-                  zIndex: 1,
-                  textAlign: 'center'
-                }}
+                className = "black-key-btn"
               >
                 {blackKeys[index]}
               </Button>
@@ -137,24 +123,11 @@ const PianoKeyboard = (props) => {
             <Button
               variant="light"
               onClick={() => handleClick(key)}
-              style={{ 
-                width: "100%", 
-                height: "100%", 
-                position: 'absolute',
-                top: '30px',
-                border: "2px solid black",
-                lineHeight: '150px',
-              }}
+              className="white-key-btn"
             >
               {key}
             </Button>
-            <p style={{ 
-                position: 'absolute',
-                top: '135px',
-                textAlign: 'center',
-                width: '100%',
-                color: 'darkslategrey'
-              }}> {bottomKeyBind[index]} </p>
+            <p className="key-bind-desc"> {bottomKeyBind[index]} </p>
           </Col>
         ))}
         <Col xs={2}></Col> {/* Empty column to center the keys */}
