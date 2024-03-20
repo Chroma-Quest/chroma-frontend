@@ -12,7 +12,8 @@ function Header() {
         color: 'black', // Font color for the brand
         fontWeight: 'bold', // Bold font for the brand
         display: 'flex',
-        justifyContent: 'flex-start' // Align the brand to the lef
+        justifyContent: 'flex-start', // Align the brand to the left
+        animation: 'slideIn 0.5s ease forwards', // Apply the animation
     };
 
     const colorMap = {
@@ -50,26 +51,27 @@ function Header() {
     return (
         <Navbar bg="dark" variant="dark" expand="lg">
             <Container>
-                <Navbar.Brand href="/" style={brandStyle}>
+                <Navbar.Brand href="/" style={brandStyle} className="brand">
                     <img
                         alt=""
                         src={newLogo}
                         width="110"
                         height="100"
-                        className="d-inline-block align-top"
+                        className="d-inline-block align-top logo"
+                        style={{ animation: 'slideIn 0.5s ease forwards' }} // Apply the animation
                     />{' '}
                     {chromaArray.map((letter, index) => (
-                        <span key={index} style={{ textShadow: `0 0 15px ${colorMap[letter.toUpperCase()]}` }}>{letter}</span>
+                        <span key={index} style={{ textShadow: `0 0 15px ${colorMap[letter.toUpperCase()]}`, animation: 'slideIn 0.5s ease forwards' }} className="chroma-name">{letter}</span>
                     ))}
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="custom-nav mr-auto"> {/* Adding custom class */}
-                        <Nav.Link href="/">HOME</Nav.Link>
-                        <Nav.Link href="/simulator">SIMULATOR</Nav.Link>
-                        <Nav.Link href="/info">INFO</Nav.Link>
-                        <Nav.Link href="/feedback">FEEDBACK</Nav.Link>
-                        <Nav.Link href="/about">ABOUT US</Nav.Link>
+                        <Nav.Link href="/" className="nav-link">Home</Nav.Link>
+                        <Nav.Link href="/simulator" className="nav-link">Simulator</Nav.Link>
+                        <Nav.Link href="/info" className="nav-link">Info</Nav.Link>
+                        <Nav.Link href="/feedback" className="nav-link">Feedback</Nav.Link>
+                        <Nav.Link href="/about" className="nav-link">About Us</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

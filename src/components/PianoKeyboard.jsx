@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
+import "../styles/PianoKeyboard.css"; // Import CSS file for custom styles
 
 const PianoKeyboard = () => {
   const keys = ["C", "D", "E", "F", "G", "A", "B", "C"];
@@ -12,27 +13,19 @@ const PianoKeyboard = () => {
   return (
     <Container>
       <Row>
+        <Col xs={2}></Col> {/* Empty column to center the keys */}
         {keys.map((key, index) => (
           <Col key={index} xs={1}>
             <Button
               variant="dark"
               onClick={() => handleKeyDown(key)}
-              style={{
-                width: "calc(90% - 10px)", // Adjusted width to fit closer
-                margin: "10px", // Added margin to create space between buttons
-                borderRadius: index === 0 || index === keys.length - 1 ? "0 0 5px 5px" : "0",
-                borderTop: index === 0 || index === keys.length - 1 ? "1px solid #333" : "none",
-                borderBottom: "none",
-                boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-                transition: "transform 0.1s ease-in-out",
-                transformOrigin: "center",
-              }}
               className="piano-key"
             >
               {key}
             </Button>
           </Col>
         ))}
+        <Col xs={2}></Col> {/* Empty column to center the keys */}
       </Row>
     </Container>
   );

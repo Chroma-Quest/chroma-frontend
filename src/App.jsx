@@ -14,7 +14,6 @@ import {
 } from 'react-router-dom';
 import Simulator from './Simulator.jsx';
 
-
 function App() {
   const [count, setCount] = useState(0)
 
