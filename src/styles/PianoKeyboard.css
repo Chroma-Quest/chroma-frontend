@@ -1,79 +1,84 @@
-/* Container Styles */
+
 .Container {
-    height: 400px; /* Increased height for better spacing */
-    width: 900px; /* Increased width for better layout */
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-  }
-  
-  /* Canvas Styles */
-  .Canvas {
     height: 200px;
-    width: 100%;
-  }
-  
-  /* Keyboard Styles */
-  .Keyboard {
-    width: 100%;
+    width: 600px;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-  }
+    justify-content: center; /* Center horizontally */
+    overflow: hidden; /* Ensure content doesn't overflow */
+}
   
-  /* Key Styles */
-  .Key {
+  /* Column Styles for White Keys */
+  .white-key-col {
     position: relative;
+    height: 120px;
+    width: 60px;
+    margin: -5px 1px;
+    margin-left: 0px;
   }
   
-  /* White Key Button Style */
-  .white-key-btn {
-    width: 40px; /* Increased width for better visibility and usability */
-    height: 200px; /* Adjusted height for better proportion */
-    border: 2px solid #000; /* Modified border color */
-    background-color: #fff; /* White key background color */
-    color: #000; /* Black text color */
-    display: flex;
-    justify-content: center;
-    align-items: flex-end; /* Adjusted alignment for key binding text */
-    position: relative;
-    z-index: 1;
-    transition: background-color 0.3s ease; /* Smooth transition for background color change */
-  }
-  
-  .white-key-btn:hover {
-    background-color: #f0f0f0; /* Lighter background color on hover */
+  /* Black Key Description Text Style */
+  .black-key-desc {
+    position: absolute;
+    width: 45%;
+    height: 60%;
+    top: 0;
+    left: 100%;
+    color: darkslategrey;
+    text-align: center;
+    font-weight: bold; /* Making font more bold */
+    margin-left: -20px;
+
+
   }
   
   /* Black Key Button Style */
   .black-key-btn {
     position: absolute;
-    top: 0;
-    width: 30px; /* Adjusted width for better proportion */
-    height: 120px; /* Adjusted height for better proportion */
-    background-color: #000; /* Black key background color */
-    color: #fff; /* White text color */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    z-index: 2;
-    transition: background-color 0.3s ease; /* Smooth transition for background color change */
+    width: 75%;
+    height: 60%;
+    top: 32px;
+    left: 85%;
+    z-index: 1;
+    text-align: center;
+    background-color: #343a40; /* Assuming variant="dark" is similar to this color */
+    border-radius: 0 0 5px 5px; /* Rounded corners */
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4); /* Shadow */
+    color: #fff; /* Assuming text color is white for dark variant */
+    margin-left: -20px;
+
   }
   
-  .black-key-btn:hover {
-    background-color: #333; /* Darker background color on hover */
+  /* White Key Button Style */
+  .white-key-btn {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 35px;
+    border: 2px solid black;
+    line-height: 180px;
+    background: linear-gradient(#f8f9fa, #e0e0e0); /* Gradient */
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4); /* Shadow */
+    color: #000; /* Assuming text color is black for light variant */
+    border-radius: 5px; /* Rounded corners */
+    font-weight: bold; 
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+    margin-left: -20px;
   }
   
   /* Key Binding Description Text Style */
   .key-bind-desc {
     position: absolute;
-    bottom: 5px; /* Adjusted bottom spacing */
-    width: 100%;
+    top: 160px;
     text-align: center;
-    color: #555; /* Darker text color for better readability */
-    font-size: 12px; /* Reduced font size for better fit */
+    width: 100%;
+    color: darkslategrey;
+    font-weight: bold; /* Making font more bold */
+    margin-left: -20px;
+
+  }
+  
+  /* Animation for White Keys */
+  .white-key-btn:hover {
+    opacity: 0.8; /* Reduce opacity on hover */
   }
   
