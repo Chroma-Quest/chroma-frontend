@@ -12,15 +12,15 @@ Actual time needed to complete: _____
 
 *************************************************************************************************************************
 
-Name of feature: STYLING #2
+Name of feature: External stylesheet
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 15 minutes
 
-Start time: _____
+Start time: 10:45am
 
-Finish time: _____
+Finish time: 11:00am
 
-Actual time needed to complete: _____
+Actual time needed to complete: 15 minutes
 
 # Project Overview #
 
