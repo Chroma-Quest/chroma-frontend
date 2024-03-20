@@ -4,20 +4,14 @@ import { useEffect, useState } from 'react';
 
 function FireworksCanvas() {
     const [ctx, setCtx] = useState()
-    //const [fireworks, setFireworks] = useState([])
-    //const [particles, setParticles] = useState([])
     const typecount = 3;
     let fireworks = [];								
     let particles = [];															
-    let sparks = [];
     let frameRate = 60;							
     let frameDelay = 1000.0/frameRate;
     
     const clientWidth = innerWidth;					
     const clientHeight = innerHeight;
-
-    let timer = 0;
-
 
     useEffect(() => {
         const canvas = document.getElementById('canvas');
@@ -77,31 +71,18 @@ function FireworksCanvas() {
         this.vx = 0;
         this.vy = 0;
         this.color = color;
-        //this.dis = distance(this.sx, this.sy, this.tx, this.ty);
-        this.dis = 2000; //idk what this does
-        //this.speed = random(700, 1100);
+        this.dis = 2000; 
         this.speed = 800;
-        this.gravity = 0; //1.5
+        this.gravity = 0;
         this.ms = 0;
         this.s = 0;
         this.del = false;
 
         this.update = function(ms) {
             this.ms = ms / 1000;
-
-
-            // this calculates the delay from a firework 
-            // if (this.s > 2000/ms) {
-                createParticles(typecount, 300, this.x, this.y, this.color);
-                //createParticles(typecount, 100, 90, 90, this.color);
-                this.del = true;
-            // } else {
-            // 	this.speed *= 0.98;
-            // 	this.x -= this.vx * this.speed * this.ms;
-            // 	this.y -= this.vy * this.speed * this.ms - this.gravity;
-            // }
-
-            this.s++;
+            createParticles(typecount, 300, this.x, this.y, this.color);
+            this.del = true;
+            
         }
 
         this.draw = function() {
@@ -109,10 +90,8 @@ function FireworksCanvas() {
                 ctx.beginPath();
                 ctx.fillStyle = this.color;
                 ctx.arc(this.x, this.y, 1, 0, 2*Math.PI);
-                //ctx.arc(90, 90, 1, 0, 2*Math.PI)
                 ctx.fill();
             }
-            
         }
     }
 
@@ -154,10 +133,16 @@ function FireworksCanvas() {
         this.update = function(ms) {
             this.ms = ms / 1000;
 
-            if (this.s > 900/ms) { if (this.opacity - 0.05 < 0) { this.opacity = 0; } else { this.opacity -= 0.05; } }
-                this.speed *= 0.95;
-                this.x -= this.vx * this.speed * this.ms + this.wind;
-                this.y -= this.vy * this.speed * this.ms;
+            if (this.s > 1200/ms) { 
+                if (this.opacity - 0.05 < 0) { 
+                    this.opacity = 0; 
+                } else { 
+                    this.opacity -= 0.05; 
+                } 
+            }
+            this.speed *= 0.95;
+            this.x -= this.vx * this.speed * this.ms + this.wind;
+            this.y -= this.vy * this.speed * this.ms;
             this.s++;
         }
 
@@ -168,29 +153,15 @@ function FireworksCanvas() {
             ctx.strokeStyle = this.color;
 
             
-            if (this.type == 3 && ctx) {
+            if (ctx) {
                 ctx.beginPath();
                 ctx.moveTo(this.x, this.y);
                 ctx.lineTo(this.x - this.vx * 10, this.y - this.vy * 10);
                 ctx.stroke();
-            } else {
-                ctx.arc(this.x, this.y, 1, 0, 2*Math.PI);
-                ctx.fill();
-            }
-
+            } 
             ctx.closePath();
             ctx.restore();
         }
-    }
-
-    const text = function() {
-        if (ctx) {
-            ctx.beginPath();
-            ctx.fillStyle = '#fff';
-            ctx.font = "14px arial";
-            ctx.fillText("fire with spacebar.", 2, clientHeight-2);
-        }
-        
     }
 
     const update = (frame) => {
@@ -198,7 +169,7 @@ function FireworksCanvas() {
             // Check if there are no particles or fireworks active
             if (particles.length === 0 && fireworks.length === 0) {
                 // Clear the canvas completely to ensure a clean background
-                ctx.clearRect(0, 0, clientWidth, clientHeight);
+                //ctx.clearRect(0, 0, clientWidth, clientHeight);
             } else {
                 // When there are active particles or fireworks, use semi-transparent clearing
                 // This allows for the trails and fading effects without prematurely clearing them
@@ -206,9 +177,6 @@ function FireworksCanvas() {
                 ctx.fillRect(0, 0, clientWidth, clientHeight);
             }
         }
-    
-        // Text to control firework
-        text();
     
         // Drawing logic for fireworks and particles
         let i = fireworks.length;
@@ -225,19 +193,17 @@ function FireworksCanvas() {
         while(i--) {
             if (particles[i].opacity == 0) {
                 particles.splice(i, 1);
+                if (particles.length === 0 && fireworks.length === 0) {
+                    // fixes ghosting
+                    ctx.fillStyle = 'rgba(0, 0, 0, 1)';
+                    ctx.fillRect(0, 0, clientWidth, clientHeight);
+                }
             } else {
                 particles[i].update(frame);
                 particles[i].draw();
             }
         }
-    
-        // Your existing logic for handling sparks (if any) would go here
-    
-        // Increment the timer
-        timer++;
     }
-
-    var main = setInterval(function() { update(frameDelay); }, frameDelay);
     
     return (
         <div id="canvas-container">
