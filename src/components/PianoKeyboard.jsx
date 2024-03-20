@@ -1,5 +1,6 @@
-import React from "react";
+
 import { Container, Row, Col, Button } from "react-bootstrap";
+import { useEffect, React } from "react";
 import C5 from '../assets/piano-sounds/mp3/Piano.ff.C5.mp3';
 import Csharp5 from '../assets/piano-sounds/mp3/Piano.ff.Db5.mp3';
 import D5 from '../assets/piano-sounds/mp3/Piano.ff.D5.mp3';
@@ -17,13 +18,31 @@ import C6 from '../assets/piano-sounds/mp3/Piano.ff.C6.mp3';
 
 const PianoKeyboard = () => {
   
-  useEffect(() => {
-    const handleKeyDown = (event) => {
-      
-      }
-    }, [];
+  const handleKeyDown = (event) => {
+    switch (event.key) {
+      case 'a':
+        new Audio(C5).play();
+        break;
+      case 'w':
+        new Audio(Csharp5).play();
+        break;
+      case 's':
+        new Audio(D5).play();
+        break;
+      case 'e':
+        new Audio(Dsharp5);
+        break;
+      default:
+        console.log("NOT DEFINED");
+        break;
+    }
+  }
 
-  
+  useEffect(() => {
+    console.log("hello")
+    
+  }, []);
+
   const whiteKeys = ["C", "D", "E", "F", "G", "A", "B", "C"];
   const blackKeys = ["C#", "D#", "", "F#", "G#", "A#", ""];
 
@@ -33,7 +52,7 @@ const PianoKeyboard = () => {
   const keyColors = ["#FFFF00", "#00FFFF", "#228B22", "#DC143C", "#87CEEB", "#9370DB", "#DAA520", "#008000", "#FF6F61", "#FF8C00", "#4B0082", "#FF007F", "#FFFF00"]
 
   
-  window.addEventListener("keydown", handleKeydown);
+  window.addEventListener("keydown", handleKeyDown);
 
   return (
     <Container style={{height: '200px', width: '700px'}}>
