@@ -1,0 +1,60 @@
+/* Container Styles */
+.Container {
+    height: 200px;
+    width: 700px;
+  }
+  
+  /* Column Styles for White Keys */
+  .white-key-col {
+    position: relative;
+    height: 100px;
+    width: 60px;
+    margin: 10px 1px;
+  }
+  
+  /* Black Key Description Text Style */
+  .black-key-desc {
+    position: absolute;
+    width: 75%;
+    height: 60%;
+    top: 0;
+    left: 80%;
+    color: darkslategrey;
+    text-align: center;
+  }
+  
+  /* Black Key Button Style */
+  .black-key-btn {
+    position: absolute;
+    width: 75%;
+    height: 60%;
+    top: 30px;
+    left: 80%;
+    z-index: 1;
+    text-align: center;
+    background-color: #343a40; /* Assuming variant="dark" is similar to this color */
+    border: none; /* You can adjust the border as per the button's actual appearance */
+    color: #fff; /* Assuming text color is white for dark variant */
+  }
+  
+  /* White Key Button Style */
+  .white-key-btn {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 30px;
+    border: 2px solid black;
+    line-height: 150px;
+    background-color: #f8f9fa; /* Assuming variant="light" is similar to this color */
+    color: #000; /* Assuming text color is black for light variant */
+  }
+  
+  /* Key Binding Description Text Style */
+  .key-bind-desc {
+    position: absolute;
+    top: 135px;
+    text-align: center;
+    width: 100%;
+    color: darkslategrey;
+  }
+  
