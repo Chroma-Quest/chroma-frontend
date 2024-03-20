@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import './styles/App.css';
+import './styles/Header.css';
 import './styles/index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
@@ -13,7 +14,6 @@ import {
 } from 'react-router-dom';
 import Simulator from './Simulator.jsx';
 import Info from './Info.jsx';
-
 
 function App() {
   const [count, setCount] = useState(0)

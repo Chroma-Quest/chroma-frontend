@@ -1,9 +1,10 @@
-canvas {
-    margin: 50px auto; /* Add margin to center the canvas vertically and horizontally */
+/* Styles for FireworksCanvas.jsx */
+#canvas-container {
+    margin: 30px auto; /* Updated to center horizontally */
     display: block;
-    width: 80%; /* Adjust width to take up 80% of the container */
-    max-width: 800px; /* Set maximum width to prevent it from stretching too wide */
-    height: 400px; /* Adjust height as needed */
+    width: 80%;
+    max-width: 800px;
+    height: 400px;
     overflow: hidden;
     background-color: #353935; /* Dark green background */
     border-radius: 10px; /* Add border radius for a rounded appearance */
