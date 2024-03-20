@@ -17,7 +17,17 @@ const PianoKeyboard = () => {
             <Button
               variant="dark"
               onClick={() => handleKeyDown(key)}
-              style={{ width: "100%", marginBottom: "10px" }}
+              style={{
+                width: "calc(90% - 10px)", // Adjusted width to fit closer
+                margin: "10px", // Added margin to create space between buttons
+                borderRadius: index === 0 || index === keys.length - 1 ? "0 0 5px 5px" : "0",
+                borderTop: index === 0 || index === keys.length - 1 ? "1px solid #333" : "none",
+                borderBottom: "none",
+                boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+                transition: "transform 0.1s ease-in-out",
+                transformOrigin: "center",
+              }}
+              className="piano-key"
             >
               {key}
             </Button>

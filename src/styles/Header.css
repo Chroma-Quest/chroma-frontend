@@ -1,17 +1,22 @@
-.Navbar {
+/* Header.css */
+
+.brand {
     padding: 10px 0;
 }
 
-.Navbar-brand img {
+.logo {
     margin-right: 10px;
 }
 
-.Navbar-nav .nav-link {
-    color: #000000 !important;
+.custom-nav .nav-link {
+    color: #514c4c !important;
     text-shadow: 1px 1px 2px #000;
-    margin: 0 10px;
+    margin: 0 30px;
+    font-family: Arial, sans-serif; /* Change font family */
+    font-size: 20px; /* Set font size to a bigger value */
+    font-weight: bold; /* Optionally, adjust font weight */
 }
 
-.Navbar-nav .nav-link:hover {
-    color: #17a2b8 !important;
+.nav-link:hover {
+    color: #fcfcfc !important;
 }

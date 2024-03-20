@@ -57,7 +57,6 @@ function Header() {
                         width="110"
                         height="100"
                         className="d-inline-block align-top"
-                        
                     />{' '}
                     {chromaArray.map((letter, index) => (
                         <span key={index} style={{ textShadow: `0 0 15px ${colorMap[letter.toUpperCase()]}` }}>{letter}</span>
@@ -65,12 +64,12 @@ function Header() {
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="mr-auto">
-                        <Nav.Link href="/">Home</Nav.Link>
-                        <Nav.Link href="/simulator">Simulator</Nav.Link>
-                        <Nav.Link href="/info">Info</Nav.Link>
-                        <Nav.Link href="/feedback">Feedback</Nav.Link>
-                        <Nav.Link href="/about">About Us</Nav.Link>
+                    <Nav className="custom-nav mr-auto"> {/* Adding custom class */}
+                        <Nav.Link href="/">HOME</Nav.Link>
+                        <Nav.Link href="/simulator">SIMULATOR</Nav.Link>
+                        <Nav.Link href="/info">INFO</Nav.Link>
+                        <Nav.Link href="/feedback">FEEDBACK</Nav.Link>
+                        <Nav.Link href="/about">ABOUT US</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

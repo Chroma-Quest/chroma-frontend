@@ -1,8 +1,6 @@
-
-import '../styles/FireworksCanvas.css';
+import '../styles/FireworksCanvas.css'; // Import CSS file
 
 function FireworksCanvas() {
-
     return (
         <div id="canvas-container">
             <canvas id="canvas"></canvas>
