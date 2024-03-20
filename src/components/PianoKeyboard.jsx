@@ -17,44 +17,22 @@ import C6 from '../assets/piano-sounds/mp3/Piano.ff.C6.mp3';
 
 const PianoKeyboard = () => {
   
-  const whiteKeys = ["C", "D", "E", "F", "G", "A", "B", "C"];
-  const whiteSounds = [
-     "Piano.ff.C5.aiff", 
-     "Piano.ff.D5.aiff", 
-     "Piano.ff.E5.aiff", 
-     "Piano.ff.F5.aiff", 
-     "Piano.ff.G5.aiff", 
-     "Piano.ff.A5.aiff", 
-     "Piano.ff.B5.aiff", 
-     "Piano.ff.C6.aiff" 
-   ];
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      
+      }
+    }, [];
 
+  
+  const whiteKeys = ["C", "D", "E", "F", "G", "A", "B", "C"];
   const blackKeys = ["C#", "D#", "", "F#", "G#", "A#", ""];
-  const blackSounds = [
-    "Piano.ff.C#5.aiff",
-    "Piano.ff.D#5.aiff",
-    "",
-    "Piano.ff.F#5.aiff",
-    "Piano.ff.G#5.aiff",
-    "Piano.ff.A#5.aiff",
-    ""
-  ];
 
   const keyBind = ["a", "w", "s", "e", "d", "f", "t", "g", "y", "h", "u", "j"];
   const topKeyBind = ["w", "e", "", "t", "y", "u",]
   const bottomKeyBind = ["a", "s", "d", "f", "g", "h", "j", "k"]
   const keyColors = ["#FFFF00", "#00FFFF", "#228B22", "#DC143C", "#87CEEB", "#9370DB", "#DAA520", "#008000", "#FF6F61", "#FF8C00", "#4B0082", "#FF007F", "#FFFF00"]
 
-  const handleKeydown = (event) => {
-    console.log(`Pressed keyboard key: ${event.key}`);
-    //click corresponding piano key with js.click()
-
-  };
-
-  const handleClick = (key) => {
-    console.log(`Pressed piano key: ${key}`);
-  }
-
+  
   window.addEventListener("keydown", handleKeydown);
 
   return (
