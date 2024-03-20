@@ -1,5 +1,5 @@
 import { Container, Row, Col, Button } from "react-bootstrap";
-import { useEffect, useState } from "react";
+import { useEffect, React } from "react";
 import C5 from '../assets/piano-sounds/mp3/Piano.ff.C5.mp3';
 import Csharp5 from '../assets/piano-sounds/mp3/Piano.ff.Db5.mp3';
 import D5 from '../assets/piano-sounds/mp3/Piano.ff.D5.mp3';
@@ -13,83 +13,111 @@ import A5 from '../assets/piano-sounds/mp3/Piano.ff.A5.mp3';
 import Asharp5 from '../assets/piano-sounds/mp3/Piano.ff.Bb5.mp3';
 import B5 from '../assets/piano-sounds/mp3/Piano.ff.B5.mp3';
 import C6 from '../assets/piano-sounds/mp3/Piano.ff.C6.mp3';
-import './PianoKeyboard.css'; // Import CSS file for styling
+import '../styles/PianoKeyboard.css';
 
 const PianoKeyboard = () => {
-  const [activeKey, setActiveKey] = useState(null);
-
+  
   const handleKeyDown = (event) => {
-    const keyMap = {
-      'a': C5, 'w': Csharp5, 's': D5, 'e': Dsharp5, 'd': E5, 'f': F5,
-      't': Fsharp5, 'g': G5, 'y': Gsharp5, 'h': A5, 'u': Asharp5, 'j': B5,
-      'k': C6
-    };
-
-    const keySound = keyMap[event.key.toLowerCase()];
-    if (keySound) {
-      new Audio(keySound).play();
-      setActiveKey(event.key.toLowerCase());
+    switch (event.key) {
+      case 'a':
+        console.log('a')
+        new Audio(C5).play();
+        break;
+      case 'w':
+        new Audio(Csharp5).play();
+        break;
+      case 's':
+        console.log('s')
+        new Audio(D5).play();
+        break;
+      case 'e':
+        new Audio(Dsharp5).play();
+        break;
+      case 'd':
+        new Audio(E5).play();
+        break;
+      case 'f':
+        new Audio(F5).play();
+        break;
+      case 't':
+        new Audio(Fsharp5).play();
+        break;
+      case 'g':
+        new Audio(G5).play();
+        break;
+      case 'y':
+        new Audio(Gsharp5).play();
+        break;
+      case 'h':
+        new Audio(A5).play();
+        break;
+      case 'u':
+        new Audio(Asharp5).play();
+        break;
+      case 'j':
+        new Audio(B5).play();
+        break;
+      case 'k':
+        new Audio(C6).play();
+        break;
+      case ' ':
+        console.log("firework")
+        break
+      default:
+        console.log("NOT DEFINED");
+        console.log(event.key)
+        break;
     }
   }
 
   const handleClick = (key) => {
-    const keyMap = {
-      'a': C5, 'w': Csharp5, 's': D5, 'e': Dsharp5, 'd': E5, 'f': F5,
-      't': Fsharp5, 'g': G5, 'y': Gsharp5, 'h': A5, 'u': Asharp5, 'j': B5,
-      'k': C6
-    };
-
-    const keySound = keyMap[key.toLowerCase()];
-    if (keySound) {
-      new Audio(keySound).play();
-      setActiveKey(key.toLowerCase());
-    }
+    console.log(key)
   }
 
   useEffect(() => {
-    window.addEventListener("keydown", handleKeyDown);
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
+    console.log("hello")
+    
   }, []);
 
   const whiteKeys = ["C", "D", "E", "F", "G", "A", "B", "C6"];
   const blackKeys = ["C#", "D#", "", "F#", "G#", "A#", ""];
 
   const keyBind = ["a", "w", "s", "e", "d", "f", "t", "g", "y", "h", "u", "j"];
-  const topKeyBind = ["w", "e", "", "t", "y", "u",];
-  const bottomKeyBind = ["a", "s", "d", "f", "g", "h", "j", "k"];
+  const topKeyBind = ["w", "e", "", "t", "y", "u",]
+  const bottomKeyBind = ["a", "s", "d", "f", "g", "h", "j", "k"]
+  const keyColors = ["#FFFF00", "#00FFFF", "#228B22", "#DC143C", "#87CEEB", "#9370DB", "#DAA520", "#008000", "#FF6F61", "#FF8C00", "#4B0082", "#FF007F", "#FFFF00"]
+
+  
+  window.addEventListener("keydown", handleKeyDown);
 
   return (
-    <Container style={{ height: '200px', width: '700px' }}>
-      <Row className="justify-content-md-center piano-keyboard">
+    <Container className="Container">
+      <Row className="justify-content-md-center">
         {whiteKeys.map((key, index) => (
-          <Col key={index} xs="auto" style={{ position: 'relative', height: '150px', width: '60px', margin: '10px 1px' }}>
+          <Col key={index} xs="auto" class="white-key-col">
             {blackKeys[index] && (
               <>
-                <p className="key-bind">{topKeyBind[index]}</p>
-                <Button
-                  variant={activeKey === keyBind[index] ? "dark" : "outline-dark"}
-                  onClick={() => handleClick(blackKeys[index])}
-                  className={`black-key ${activeKey === keyBind[index] ? 'active' : ''}`}
-                  style={{ backgroundColor: 'black' }}
-                >
-                  {blackKeys[index]}
-                </Button>
+              <p className="black-key-desc"> {topKeyBind[index]} </p>
+              <Button
+                variant="dark"
+                onClick={() => handleClick(blackKeys[index])}
+                className = "black-key-btn"
+              >
+                {blackKeys[index]}
+              </Button>
               </>
             )}
             <Button
-              variant={activeKey === keyBind[index] ? "light" : "outline-light"}
+              variant="light"
               onClick={() => handleClick(key)}
-              className={`white-key ${activeKey === keyBind[index] ? 'active' : ''}`}
-              style={{ backgroundColor: 'white' }}
+              className="white-key-btn"
             >
               {key}
             </Button>
-            <p className="key-bind">{bottomKeyBind[index]}</p>
+            <p className="key-bind-desc"> {bottomKeyBind[index]} </p>
           </Col>
         ))}
-        <Col xs={2}></Col>
+        <Col xs={2}></Col> {/* Empty column to center the keys */}
       </Row>
     </Container>
   );
