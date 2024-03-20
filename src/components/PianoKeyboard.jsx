@@ -1,5 +1,6 @@
 
 import { Container, Row, Col, Button } from "react-bootstrap";
+import "../styles/PianoKeyboard.css"; // Import CSS file for custom styles
 import { useEffect, React } from "react";
 import C5 from '../assets/piano-sounds/mp3/Piano.ff.C5.mp3';
 import Csharp5 from '../assets/piano-sounds/mp3/Piano.ff.Db5.mp3';
@@ -123,7 +124,8 @@ const PianoKeyboard = () => {
               </>
             )}
             <Button
-              variant="light"
+              variant="light
+              className="piano-key"
               onClick={() => handleClick(key)}
               style={{ 
                 width: "100%", 

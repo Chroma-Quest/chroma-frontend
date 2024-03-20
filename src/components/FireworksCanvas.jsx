@@ -1,4 +1,4 @@
-
+import '../styles/FireworksCanvas.css'; // Import CSS file
 import '../styles/FireworksCanvas.css';
 import { useEffect, useState } from 'react';
 
