@@ -76,7 +76,6 @@ const PianoKeyboard = (props) => {
   const handleKeyDown = async (event) => {
     if (keyBinds.includes(event.key)) {
       new Audio(labels_colors_notes[event.key]['sound']).play();
-      
       props.setColorsQueue([...props.colorsQueue, labels_colors_notes[event.key]['color']]);
       
     }
