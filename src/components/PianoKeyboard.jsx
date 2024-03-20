@@ -30,12 +30,47 @@ const PianoKeyboard = () => {
         new Audio(D5).play();
         break;
       case 'e':
-        new Audio(Dsharp5);
+        new Audio(Dsharp5).play();
         break;
+      case 'd':
+        new Audio(E5).play();
+        break;
+      case 'f':
+        new Audio(F5).play();
+        break;
+      case 't':
+        new Audio(Fsharp5).play();
+        break;
+      case 'g':
+        new Audio(G5).play();
+        break;
+      case 'y':
+        new Audio(Gsharp5).play();
+        break;
+      case 'h':
+        new Audio(A5).play();
+        break;
+      case 'u':
+        new Audio(Asharp5).play();
+        break;
+      case 'j':
+        new Audio(B5).play();
+        break;
+      case 'k':
+        new Audio(C6).play();
+        break;
+      case ' ':
+        console.log("firework")
+        break
       default:
         console.log("NOT DEFINED");
+        console.log(event.key)
         break;
     }
+  }
+
+  const handleClick = (key) => {
+    console.log(key)
   }
 
   useEffect(() => {
@@ -43,7 +78,7 @@ const PianoKeyboard = () => {
     
   }, []);
 
-  const whiteKeys = ["C", "D", "E", "F", "G", "A", "B", "C"];
+  const whiteKeys = ["C", "D", "E", "F", "G", "A", "B", "C6"];
   const blackKeys = ["C#", "D#", "", "F#", "G#", "A#", ""];
 
   const keyBind = ["a", "w", "s", "e", "d", "f", "t", "g", "y", "h", "u", "j"];
@@ -87,7 +122,7 @@ const PianoKeyboard = () => {
             )}
             <Button
               variant="light"
-              onClick={() => handleKeyDown(key)}
+              onClick={() => handleClick(key)}
               style={{ 
                 width: "100%", 
                 height: "100%", 
