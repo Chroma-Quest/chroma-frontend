@@ -14,6 +14,7 @@ import {
 } from 'react-router-dom';
 import Simulator from './Simulator.jsx';
 import Info from './Info.jsx';
+import Feedback from './Feedback.jsx';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -28,6 +29,7 @@ function App() {
           <Route exact path="/simulator" element={<Simulator />} />
           <Route exact path="/about" element={<p>about</p>} />
           <Route exact path="/info" element={<Info />} />
+          <Route exact path="/feedback" element={<Feedback />} />
         </Routes>
       </Router>
       <Footer />
