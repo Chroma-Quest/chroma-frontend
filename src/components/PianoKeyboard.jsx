@@ -26,7 +26,9 @@ const PianoKeyboard = () => {
     ""
   ];
 
-  const keyBind = ["A", "W", "S", "E", "D", "F", "T", "G", "Y", "H", "U", "J"];
+  const keyBind = ["a", "w", "s", "e", "d", "f", "t", "g", "y", "h", "u", "j"];
+  const topKeyBind = ["w", "e", "", "t", "y", "u",]
+  const bottomKeyBind = ["a", "s", "d", "f", "g", "h", "j", "k"]
   const keyColors = ["#FFFF00", "#00FFFF", "#228B22", "#DC143C", "#87CEEB", "#9370DB", "#DAA520", "#008000", "#FF6F61", "#FF8C00", "#4B0082", "#FF007F", "#FFFF00"]
 
   const handleKeyDown = (key) => {
@@ -35,25 +37,35 @@ const PianoKeyboard = () => {
   };
 
   return (
-    <Container>
+    <Container style={{height: '300px', backgroundColor: '#353935'}}>
       <Row className="justify-content-md-center">
         {whiteKeys.map((key, index) => (
           <Col key={index} xs="auto" style={{ position: 'relative', height: '100px', width: '60px', margin: '10px 1px' }}>
             {blackKeys[index] && (
+              <>
+              <p style={{position: 'absolute',
+                  width: "75%",
+                  height: "60%",
+                  top: '0',
+                  left: '80%',
+                  color: 'darkslategrey',
+                  textAlign: 'center'}}> {topKeyBind[index]} </p>
               <Button
                 variant="dark"
                 onClick={() => handleKeyDown(blackKeys[index])}
                 style={{
                   position: 'absolute',
                   width: "75%",
-                  top: '0',
-                  left: '70%',
+                  height: "60%",
+                  top: '30px',
+                  left: '80%',
                   zIndex: 1,
                   textAlign: 'center'
                 }}
               >
                 {blackKeys[index]}
               </Button>
+              </>
             )}
             <Button
               variant="light"
@@ -62,15 +74,24 @@ const PianoKeyboard = () => {
                 width: "100%", 
                 height: "100%", 
                 position: 'absolute',
-                bottom: 0,
-                border: "2px solid black"
+                top: '30px',
+                border: "2px solid black",
+                lineHeight: '150px',
               }}
             >
               {key}
             </Button>
+            <p style={{ 
+                position: 'absolute',
+                top: '135px',
+                textAlign: 'center',
+                width: '100%',
+                color: 'darkslategrey'
+              }}> {bottomKeyBind[index]} </p>
           </Col>
         ))}
       </Row>
+      
     </Container>
   );
 };
