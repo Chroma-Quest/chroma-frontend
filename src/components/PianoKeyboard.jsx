@@ -107,7 +107,7 @@ const PianoKeyboard = (props) => {
     <Container className="Container">
       <Row className="justify-content-md-center">
         {whiteKeys.map((key, index) => (
-          <Col key={index} xs="auto" class="white-key-col">
+          <Col key={index} xs="auto" className="white-key-col">
             {blackKeys[index] && (
               <>
               <p className="black-key-desc"> {topKeyBind[index]} </p>
