@@ -26,3 +26,19 @@ W - White (#FFFFFF)
 X - Xanadu (#738678)
 Y - Yellow (#FFFF00)
 Z - Zephyr Blue (#76B9D7)
+
+# Colors and Aplhabets #
+
+C - Yellow Sunshine (#FFFF00)
+C# - Blue Electric (#00FFFF)
+D - Green Forest (#228B22)
+D# - Red Crimson (#DC143C)
+E - Blue Sky (#87CEEB)
+F - Purple Lavender (#9370DB)
+F# - Yellow Goldenrod (#DAA520)
+G - Green Emerald (#008000)
+G# - Pink Coral (#FF6F61)
+A - Orange Deep (#FF8C00)
+A# - Blue Indigo (#4B0082)
+B - Pink Rose (#FF007F)
+C (higher octave) - Yellow Sunshine (#FFFF00) or choose a different shade for differentiation.

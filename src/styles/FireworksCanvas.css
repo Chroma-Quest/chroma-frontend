@@ -6,8 +6,7 @@
     max-width: 800px;
     height: 400px;
     overflow: hidden;
-    padding: 20px;
-    background-color: #353935;
-    border-radius: 10px;
-    box-shadow: 0 0 40px rgba(0, 0, 0, 1);
+    background-color: #353935; /* Dark green background */
+    border-radius: 10px; /* Add border radius for a rounded appearance */
+    box-shadow: 0 0 40px rgba(0, 0, 0, 1); /* Add box shadow for depth */
 }
