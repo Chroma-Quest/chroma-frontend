@@ -5,12 +5,12 @@ function FeedbackForm() {
     return (
       <div className="Feedback">
         <div>
-          <h2 style={{ color: 'green' }}>GeeksforGeeks</h2>
-          <h2>How to create an Iframe in React</h2>
+          <h2 style={{ color: 'blue' }}>Survey</h2>
+          <h2>Please look below to complete a satisfaction survey</h2>
           <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/tmg6d3T_T6Q"
+            width="1000"
+            height="675"
+            src="https://kyhbse2ktpm.typeform.com/to/ytoSAgtK"
             title="GeeksforGeeks"
           ></iframe>
         </div>
@@ -20,5 +20,4 @@ function FeedbackForm() {
   
 
 export default FeedbackForm;
-
 
