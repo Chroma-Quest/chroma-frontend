@@ -1,8 +1,22 @@
 import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-//import Ab5 from '../assets/piano-sounds/Piano.ff.Ab5.mp3';
+import C5 from '../assets/piano-sounds/mp3/Piano.ff.C5.mp3';
+import Csharp5 from '../assets/piano-sounds/mp3/Piano.ff.Db5.mp3';
+import D5 from '../assets/piano-sounds/mp3/Piano.ff.D5.mp3';
+import Dsharp5 from '../assets/piano-sounds/mp3/Piano.ff.Eb5.mp3';
+import E5 from '../assets/piano-sounds/mp3/Piano.ff.E5.mp3';
+import F5 from '../assets/piano-sounds/mp3/Piano.ff.F5.mp3';
+import Fsharp5 from '../assets/piano-sounds/mp3/Piano.ff.Gb5.mp3';
+import G5 from '../assets/piano-sounds/mp3/Piano.ff.G5.mp3';
+import Gsharp5 from '../assets/piano-sounds/mp3/Piano.ff.Ab5.mp3';
+import A5 from '../assets/piano-sounds/mp3/Piano.ff.A5.mp3';
+import Asharp5 from '../assets/piano-sounds/mp3/Piano.ff.Bb5.mp3';
+import B5 from '../assets/piano-sounds/mp3/Piano.ff.B5.mp3';
+import C6 from '../assets/piano-sounds/mp3/Piano.ff.C6.mp3';
+
 
 const PianoKeyboard = () => {
+  
   const whiteKeys = ["C", "D", "E", "F", "G", "A", "B", "C"];
   const whiteSounds = [
      "Piano.ff.C5.aiff", 
