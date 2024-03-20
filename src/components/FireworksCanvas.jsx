@@ -60,40 +60,30 @@ function FireworksCanvas() {
     }
 
     // Function to start Firework
-    const Firework = function(color) {
-        
-        this.x = random(90, clientWidth-90);
-        this.y = random(90, clientHeight-90);
-        this.sx = 0;
-        this.sy = 0;
-        this.tx = 0;
-        this.ty = 0;
-        this.vx = 0;
-        this.vy = 0;
-        this.color = color;
-        this.dis = 2000; 
-        this.speed = 800;
-        this.gravity = 0;
-        this.ms = 0;
-        this.s = 0;
-        this.del = false;
-
-        this.update = function(ms) {
+    class Firework {
+        constructor(color) {
+            this.x = random(90, clientWidth - 90);
+            this.y = random(90, clientHeight - 90);
+            this.color = color;
+            this.del = false;
+        }
+    
+        update(ms) {
             this.ms = ms / 1000;
             createParticles(typecount, 300, this.x, this.y, this.color);
             this.del = true;
-            
         }
-
-        this.draw = function() {
+    
+        draw(ctx) {
             if (ctx) {
                 ctx.beginPath();
                 ctx.fillStyle = this.color;
-                ctx.arc(this.x, this.y, 1, 0, 2*Math.PI);
+                ctx.arc(this.x, this.y, 1, 0, 2 * Math.PI);
                 ctx.fill();
             }
         }
     }
+    
 
     // Function to create array particles
     const createParticles = (type, count, pox, poy, color) => {
@@ -173,7 +163,7 @@ function FireworksCanvas() {
             } else {
                 // When there are active particles or fireworks, use semi-transparent clearing
                 // This allows for the trails and fading effects without prematurely clearing them
-                ctx.fillStyle = 'rgba(0, 0, 0, 0.15)';
+                ctx.fillStyle = 'rgba(21, 22, 21, 0.15)';
                 ctx.fillRect(0, 0, clientWidth, clientHeight);
             }
         }
@@ -195,7 +185,7 @@ function FireworksCanvas() {
                 particles.splice(i, 1);
                 if (particles.length === 0 && fireworks.length === 0) {
                     // fixes ghosting
-                    ctx.fillStyle = 'rgba(0, 0, 0, 1)';
+                    ctx.fillStyle = 'rgba(21, 22, 21, 1)';
                     ctx.fillRect(0, 0, clientWidth, clientHeight);
                 }
             } else {
@@ -207,7 +197,7 @@ function FireworksCanvas() {
     
     return (
         <div id="canvas-container">
-            <canvas style={{marginBottom: "45px"}} id="canvas"></canvas>
+            <canvas style={{marginBottom: "45px", backgroundColor: 'rgb(21, 22, 21)'}} id="canvas"></canvas>
         </div>
     )
 }

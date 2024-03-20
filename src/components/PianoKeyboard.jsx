@@ -31,13 +31,20 @@ const PianoKeyboard = () => {
   const bottomKeyBind = ["a", "s", "d", "f", "g", "h", "j", "k"]
   const keyColors = ["#FFFF00", "#00FFFF", "#228B22", "#DC143C", "#87CEEB", "#9370DB", "#DAA520", "#008000", "#FF6F61", "#FF8C00", "#4B0082", "#FF007F", "#FFFF00"]
 
-  const handleKeyDown = (key) => {
-    console.log(`Pressed key: ${key}`);
-    // Logic for when a key is pressed can be added here
+  const handleKeydown = (event) => {
+    console.log(`Pressed keyboard key: ${event.key}`);
+    //click corresponding piano key with js.click()
+
   };
 
+  const handleClick = (key) => {
+    console.log(`Pressed piano key: ${key}`);
+  }
+
+  window.addEventListener("keydown", handleKeydown);
+
   return (
-    <Container style={{height: '300px', backgroundColor: '#353935'}}>
+    <Container style={{height: '200px', width: '700px'}}>
       <Row className="justify-content-md-center">
         {whiteKeys.map((key, index) => (
           <Col key={index} xs="auto" style={{ position: 'relative', height: '100px', width: '60px', margin: '10px 1px' }}>
@@ -52,7 +59,7 @@ const PianoKeyboard = () => {
                   textAlign: 'center'}}> {topKeyBind[index]} </p>
               <Button
                 variant="dark"
-                onClick={() => handleKeyDown(blackKeys[index])}
+                onClick={() => handleClick(blackKeys[index])}
                 style={{
                   position: 'absolute',
                   width: "75%",
