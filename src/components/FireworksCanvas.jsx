@@ -2,7 +2,7 @@ import '../styles/FireworksCanvas.css'; // Import CSS file
 import '../styles/FireworksCanvas.css';
 import { useEffect, useState } from 'react';
 
-function FireworksCanvas() {
+function FireworksCanvas(props) {
     const [ctx, setCtx] = useState()
     const typecount = 3;
     let fireworks = [];								
@@ -43,6 +43,14 @@ function FireworksCanvas() {
         };
     }, [ctx]);
 
+    useEffect(() => {
+        if (props.colorsQueue.length > 0) {
+            console.log("firework created", props.colorsQueue[0])
+            createFirework(props.colorsQueue[0]);
+        }
+        
+    }, [props.colorsQueue]);
+
     // My function to create random number
     function random(min, max, round) {
         if (round == 'round') {
@@ -54,7 +62,7 @@ function FireworksCanvas() {
 
 
     // Function to make firework
-    const createFirework = function(color) {
+    const createFirework = async function(color) {
         let firework = new Firework(color);
         fireworks.push(firework);
     }

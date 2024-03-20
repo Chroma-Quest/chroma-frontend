@@ -8,7 +8,7 @@ import './styles/App.css';
 
 function Simulator() {
   const [colorsQueue, setColorsQueue] = useState([])
-
+  console.log(colorsQueue, colorsQueue.length);
   return (
     <>
       <FireworksCanvas colorsQueue={colorsQueue} />
