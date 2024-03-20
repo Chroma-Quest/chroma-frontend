@@ -1,4 +1,15 @@
+.brand .chroma-name, .brand .logo {
+    animation: slideIn 0.5s ease forwards; /* Apply the animation */
+}
 
-.Navbar {
-  
+/* Define the animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

@@ -4,20 +4,14 @@ import { useEffect, useState } from 'react';
 
 function FireworksCanvas() {
     const [ctx, setCtx] = useState()
-    //const [fireworks, setFireworks] = useState([])
-    //const [particles, setParticles] = useState([])
     const typecount = 3;
     let fireworks = [];								
     let particles = [];															
-    let sparks = [];
     let frameRate = 60;							
     let frameDelay = 1000.0/frameRate;
     
     const clientWidth = innerWidth;					
     const clientHeight = innerHeight;
-
-    let timer = 0;
-
 
     useEffect(() => {
         const canvas = document.getElementById('canvas');
@@ -29,7 +23,7 @@ function FireworksCanvas() {
 
         function handleKeydown(event) {
             if (event.code === "Space") {
-                createFirework("skyblue");
+                createFirework("#008000");
             } 
         }
 
@@ -66,55 +60,30 @@ function FireworksCanvas() {
     }
 
     // Function to start Firework
-    const Firework = function(color) {
-        
-        this.x = random(90, clientWidth-90);
-        this.y = random(90, clientHeight-90);
-        this.sx = 0;
-        this.sy = 0;
-        this.tx = 0;
-        this.ty = 0;
-        this.vx = 0;
-        this.vy = 0;
-        this.color = color;
-        //this.dis = distance(this.sx, this.sy, this.tx, this.ty);
-        this.dis = 2000; //idk what this does
-        //this.speed = random(700, 1100);
-        this.speed = 800;
-        this.gravity = 0; //1.5
-        this.ms = 0;
-        this.s = 0;
-        this.del = false;
-
-        this.update = function(ms) {
-            this.ms = ms / 1000;
-
-
-            // this calculates the delay from a firework 
-            // if (this.s > 2000/ms) {
-                createParticles(typecount, 100, this.x, this.y, this.color);
-                //createParticles(typecount, 100, 90, 90, this.color);
-                this.del = true;
-            // } else {
-            // 	this.speed *= 0.98;
-            // 	this.x -= this.vx * this.speed * this.ms;
-            // 	this.y -= this.vy * this.speed * this.ms - this.gravity;
-            // }
-
-            this.s++;
+    class Firework {
+        constructor(color) {
+            this.x = random(90, clientWidth - 90);
+            this.y = random(90, clientHeight - 90);
+            this.color = color;
+            this.del = false;
         }
-
-        this.draw = function() {
+    
+        update(ms) {
+            this.ms = ms / 1000;
+            createParticles(typecount, 300, this.x, this.y, this.color);
+            this.del = true;
+        }
+    
+        draw(ctx) {
             if (ctx) {
                 ctx.beginPath();
                 ctx.fillStyle = this.color;
-                ctx.arc(this.x, this.y, 1, 0, 2*Math.PI);
-                //ctx.arc(90, 90, 1, 0, 2*Math.PI)
+                ctx.arc(this.x, this.y, 1, 0, 2 * Math.PI);
                 ctx.fill();
             }
-            
         }
     }
+    
 
     // Function to create array particles
     const createParticles = (type, count, pox, poy, color) => {
@@ -146,7 +115,7 @@ function FireworksCanvas() {
         this.wind = 0;
         this.type = 1;
         this.opacity = 1;
-        this.s = 0;
+        this.s = 10;
         this.scale = 1;
         this.color = '#FFF';
         this.del = false;
@@ -154,10 +123,16 @@ function FireworksCanvas() {
         this.update = function(ms) {
             this.ms = ms / 1000;
 
-            if (this.s > 900/ms) { if (this.opacity - 0.05 < 0) { this.opacity = 0; } else { this.opacity -= 0.05; } }
-                this.speed *= 0.95;
-                this.x -= this.vx * this.speed * this.ms + this.wind;
-                this.y -= this.vy * this.speed * this.ms;
+            if (this.s > 1200/ms) { 
+                if (this.opacity - 0.05 < 0) { 
+                    this.opacity = 0; 
+                } else { 
+                    this.opacity -= 0.05; 
+                } 
+            }
+            this.speed *= 0.95;
+            this.x -= this.vx * this.speed * this.ms + this.wind;
+            this.y -= this.vy * this.speed * this.ms;
             this.s++;
         }
 
@@ -168,77 +143,61 @@ function FireworksCanvas() {
             ctx.strokeStyle = this.color;
 
             
-            if (this.type == 3 && ctx) {
+            if (ctx) {
                 ctx.beginPath();
                 ctx.moveTo(this.x, this.y);
                 ctx.lineTo(this.x - this.vx * 10, this.y - this.vy * 10);
                 ctx.stroke();
-            } else {
-                ctx.arc(this.x, this.y, 1, 0, 2*Math.PI);
-                ctx.fill();
-            }
-
+            } 
             ctx.closePath();
             ctx.restore();
         }
     }
 
-    const text = function() {
-        if (ctx) {
-            ctx.beginPath();
-            ctx.fillStyle = '#fff';
-            ctx.font = "14px arial";
-            ctx.fillText("fire with spacebar.", 2, clientHeight-2);
-        }
-        
-    }
-
     const update = (frame) => {
-
-        // text to control firework
-        text();
         if (ctx) {
-            ctx.globalAlpha = 1;
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.15)';
-            ctx.fillRect(0, 0, clientWidth, clientHeight);
+            // Check if there are no particles or fireworks active
+            if (particles.length === 0 && fireworks.length === 0) {
+                // Clear the canvas completely to ensure a clean background
+                //ctx.clearRect(0, 0, clientWidth, clientHeight);
+            } else {
+                // When there are active particles or fireworks, use semi-transparent clearing
+                // This allows for the trails and fading effects without prematurely clearing them
+                ctx.fillStyle = 'rgba(21, 22, 21, 0.15)';
+                ctx.fillRect(0, 0, clientWidth, clientHeight);
+            }
         }
-        
-
+    
+        // Drawing logic for fireworks and particles
         let i = fireworks.length;
         while(i--) {
-            // Progress starting Fireworks
-            if (fireworks[i].del == true) { fireworks.splice(i, 1); } else {
+            if (fireworks[i].del == true) {
+                fireworks.splice(i, 1);
+            } else {
                 fireworks[i].update(frame);
                 fireworks[i].draw();
             }
         }
-
+    
         i = particles.length;
         while(i--) {
-            // Progress particles
-            if (particles[i].opacity == 0) { particles.splice(i, 1); } else {
+            if (particles[i].opacity == 0) {
+                particles.splice(i, 1);
+                if (particles.length === 0 && fireworks.length === 0) {
+                    // fixes ghosting
+                    ctx.fillStyle = 'rgba(21, 22, 21, 1)';
+                    ctx.fillRect(0, 0, clientWidth, clientHeight);
+                }
+            } else {
                 particles[i].update(frame);
                 particles[i].draw();
             }
         }
-
-        i = sparks.length;
-        while(i--) {
-            // Progress sparks
-            if (sparks[i].limit < 0) { sparks.splice(i, 1); } else {
-                sparks[i].update(frame);
-                sparks[i].draw();
-            }
-        }
-
-        timer++;
     }
-
-    var main = setInterval(function() { update(frameDelay); }, frameDelay);
     
     return (
         <div id="canvas-container">
-            <canvas style={{marginBottom: "45px"}} id="canvas"></canvas>
+            <canvas style={{marginBottom: "45px", backgroundColor: 'rgb(21, 22, 21)'}} id="canvas"></canvas>
         </div>
     )
 }
