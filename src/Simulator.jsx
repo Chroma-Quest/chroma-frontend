@@ -7,12 +7,12 @@ import './styles/App.css';
 
 
 function Simulator() {
-  const [count, setCount] = useState(0)
-
+  const [colorsQueue, setColorsQueue] = useState([])
+  console.log(colorsQueue, colorsQueue.length);
   return (
     <>
-      <FireworksCanvas />
-      <PianoKeyboard />
+      <FireworksCanvas colorsQueue={colorsQueue} />
+      <PianoKeyboard setColorsQueue={setColorsQueue} colorsQueue={colorsQueue} />
     </>
   )
 }

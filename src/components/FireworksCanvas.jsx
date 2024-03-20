@@ -2,12 +2,12 @@ import '../styles/FireworksCanvas.css'; // Import CSS file
 import '../styles/FireworksCanvas.css';
 import { useEffect, useState } from 'react';
 
-function FireworksCanvas() {
+function FireworksCanvas(props) {
     const [ctx, setCtx] = useState()
     const typecount = 3;
     let fireworks = [];								
     let particles = [];															
-    let frameRate = 60;							
+    let frameRate = 20;							
     let frameDelay = 1000.0/frameRate;
     
     const clientWidth = innerWidth;					
@@ -27,6 +27,11 @@ function FireworksCanvas() {
             } 
         }
 
+        if (props.colorsQueue.length > 0) {
+            console.log("firework created", props.colorsQueue[0])
+            createFirework(props.colorsQueue[0]);
+        }
+
         window.addEventListener("keydown", handleKeydown);
         window.oncontextmenu = () => false; // Block right-click menu
 
@@ -41,7 +46,9 @@ function FireworksCanvas() {
             window.removeEventListener("keydown", handleKeydown);
             clearInterval(main);
         };
-    }, [ctx]);
+    }, [ctx, props.colorsQueue]);
+
+    
 
     // My function to create random number
     function random(min, max, round) {
@@ -54,7 +61,7 @@ function FireworksCanvas() {
 
 
     // Function to make firework
-    const createFirework = function(color) {
+    const createFirework = async function(color) {
         let firework = new Firework(color);
         fireworks.push(firework);
     }
