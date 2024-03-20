@@ -1,6 +1,5 @@
 
 import { Container, Row, Col, Button } from "react-bootstrap";
-<<<<<<< HEAD
 import { useEffect, React } from "react";
 import C5 from '../assets/piano-sounds/mp3/Piano.ff.C5.mp3';
 import Csharp5 from '../assets/piano-sounds/mp3/Piano.ff.Db5.mp3';
@@ -16,21 +15,20 @@ import Asharp5 from '../assets/piano-sounds/mp3/Piano.ff.Bb5.mp3';
 import B5 from '../assets/piano-sounds/mp3/Piano.ff.B5.mp3';
 import C6 from '../assets/piano-sounds/mp3/Piano.ff.C6.mp3';
 
-=======
-import "../styles/PianoKeyboard.css"; // Import CSS file for custom styles
->>>>>>> f73bb11ae99b86ae6a9504deb5559f708fbf8087
 
 const PianoKeyboard = () => {
   
   const handleKeyDown = (event) => {
     switch (event.key) {
       case 'a':
+        console.log('a')
         new Audio(C5).play();
         break;
       case 'w':
         new Audio(Csharp5).play();
         break;
       case 's':
+        console.log('s')
         new Audio(D5).play();
         break;
       case 'e':
@@ -149,7 +147,6 @@ const PianoKeyboard = () => {
         ))}
         <Col xs={2}></Col> {/* Empty column to center the keys */}
       </Row>
-      
     </Container>
   );
 };
