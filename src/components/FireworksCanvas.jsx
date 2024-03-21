@@ -8,7 +8,7 @@ function FireworksCanvas(props) {
     let fireworks = [];								
     let particles = [];															
     let frameRate = 20;							
-    let frameDelay = 1000.0/frameRate;
+    let frameDelay = 1500.0/frameRate;
     
     const clientWidth = innerWidth;					
     const clientHeight = innerHeight;
@@ -21,34 +21,19 @@ function FireworksCanvas(props) {
             setCtx(canvas.getContext('2d'));
         }
 
-        function handleKeydown(event) {
-            if (event.code === "Space") {
-                createFirework("#008000");
-            } 
-        }
-
         if (props.colorsQueue.length > 0) {
-            console.log("firework created", props.colorsQueue[0])
             createFirework(props.colorsQueue[0]);
         }
 
-        window.addEventListener("keydown", handleKeydown);
         window.oncontextmenu = () => false; // Block right-click menu
 
-        const main = setInterval(() => {
+        setInterval(() => {
             if (ctx) {
                 update(frameDelay);
             }
         }, frameDelay);
-
-        // Cleanup on component unmount
-        return () => {
-            window.removeEventListener("keydown", handleKeydown);
-            clearInterval(main);
-        };
+        
     }, [ctx, props.colorsQueue]);
-
-    
 
     // My function to create random number
     function random(min, max, round) {

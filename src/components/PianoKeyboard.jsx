@@ -1,4 +1,3 @@
-
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import C5 from '../assets/piano-sounds/mp3/Piano.ff.C5.mp3';
@@ -107,7 +106,7 @@ const PianoKeyboard = (props) => {
               <>
               <p className="black-key-desc"> {topKeyBind[index]} </p>
               <Button
-                variant="dark"
+                //variant="dark"
                 onClick={() => handleClick(blackKeys[index])}
                 className = "black-key-btn"
               >
@@ -116,7 +115,7 @@ const PianoKeyboard = (props) => {
               </>
             )}
             <Button
-              variant="light"
+              //variant="light"
               onClick={() => handleClick(key)}
               className="white-key-btn"
             >
