@@ -1,15 +1,54 @@
-.brand .chroma-name, .brand .logo {
-    animation: slideIn 0.5s ease forwards; /* Apply the animation */
-}
+/* animations.css */
 
-/* Define the animation */
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
+.navbar-brand:hover {
+    animation: bounce 0.5s ease infinite alternate;
+  }
+  
+  .nav-item:nth-child(1) .nav-link:hover {
+    animation: shake 0.5s ease infinite alternate;
+  }
+  
+  .nav-item:nth-child(2) .nav-link:hover {
+    animation: rotate 0.5s ease infinite alternate;
+  }
+  
+  .nav-item:nth-child(3) .nav-link:hover {
+    animation: pulse 0.5s ease infinite alternate;
+  }
+  
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    100% {
+      transform: translateY(-5px);
     }
-}
+  }
+  
+  @keyframes shake {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(-5deg);
+    }
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.1) rotate(360deg);
+    }
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+  

@@ -66,6 +66,18 @@ Actual time needed to complete: 45 minutes
 
 Name of feature: Info page content, styling and layout
 
+Estimate of time needed to complete: 3hrs
+
+Start time: N/A
+
+Finish time: N/A
+
+Actual time needed to complete: N/A
+
+*************************************************************************************************************************
+
+Name of feature: Home Page Styling
+
 Estimate of time needed to complete: 2 hours
 
 Start time: 10:00am
