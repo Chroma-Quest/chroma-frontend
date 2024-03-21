@@ -20,6 +20,7 @@
 03-19-2024 11:18am Added canvas and piano buttons to Simulator Page.
 03-19-2024 2:00pm Added color to letters feature with toggle button on Info page.
 03-19-2024 5:00pm Fixed ghosting of fireworks on the canvas.
+03-20-2024 2:00pm Added content and styling to info page.
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
@@ -33,13 +34,9 @@ Estimate of time needed to complete: 25 minutes
 
 Start time: 10:00
 
-<<<<<<< HEAD
-Actual time needed to complete: N/A
-=======
 Finish time: 10:30
 
 Actual time needed to complete: 30 minutes
->>>>>>> 0c1c53e44a926960ecf7584b164a20404e5ac977
 
 *************************************************************************************************************************
 
@@ -67,7 +64,7 @@ Actual time needed to complete: 45 minutes
 
 *************************************************************************************************************************
 
-Name of feature: ________________________________
+Name of feature: Info page content, styling and layout
 
 Estimate of time needed to complete: 3hrs
 
@@ -79,16 +76,27 @@ Actual time needed to complete: N/A
 
 *************************************************************************************************************************
 
-Name of feature: STYLING #3
+Name of feature: Home Page Styling
 
-Estimate of time needed to complete: 6hrs
+Estimate of time needed to complete: 2 hours
 
-Start time: N/A
+Start time: 10:00am
 
-Finish time: N/A
+Finish time: 2:00pm
 
-Actual time needed to complete: 3hrs
+Actual time needed to complete: 3 hours
 
+*************************************************************************************************************************
+
+Name of feature: Info page content, styling and layout
+
+Estimate of time needed to complete: ______
+
+Start time: ________
+
+Finish time: _______
+
+Actual time needed to complete: _______
 
 
 # Project Overview #

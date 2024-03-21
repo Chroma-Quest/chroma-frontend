@@ -1,5 +1,7 @@
+
 import React from 'react';
 import { useState } from 'react';
+
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import Home from './components/Home.jsx'; // Importing Home component
@@ -18,13 +20,11 @@ import Feedback from './Feedback.jsx';
 import About from './About.jsx';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className="app-container">
       <Header />
       <div className="main-content">
-    
       <Router>
         <Routes>
           <Route exact path="/" element={<Home />} />

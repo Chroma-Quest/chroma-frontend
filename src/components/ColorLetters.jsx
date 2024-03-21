@@ -1,5 +1,9 @@
 "use strict"
+import { bottom } from '@popperjs/core';
 import { React, useState } from 'react';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Container, Row, Col, Button } from 'react-bootstrap';
+
 
 function ColorLetters() {
   const [synesthesiaEnabled, setSynesthesiaEnabled] = useState(false);
@@ -7,6 +11,7 @@ function ColorLetters() {
   const toggleSynesthesia = () => {
     setSynesthesiaEnabled(!synesthesiaEnabled);
   };
+  
 
   const applySynesthesia = (text) => {
     const colors = {
@@ -17,7 +22,7 @@ function ColorLetters() {
       U: "#4166F5", V: "#F3E5AB", W: "#FFFFFF", X: "#738678", Y: "#FFFF00",
       Z: "#76B9D7"
     };
-
+    
     const letters = text.split('');
 
     return letters.map((letter, index) => (
@@ -28,17 +33,36 @@ function ColorLetters() {
   };
 
   return (
-    <div>
-      {synesthesiaEnabled ? (
-        <button onClick={toggleSynesthesia}>Disable Synesthesia</button>
-      ) : (
-        <button onClick={toggleSynesthesia}>Enable Synesthesia</button>
-      )}
-      <div>
-        {applySynesthesia("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur")}
-        
-      </div>
-    </div>
+    <Container style={{ marginTop: '30px' }}>
+      <Container style={{ display: 'flex', justifyContent: 'center'}}>
+      <Row className="InfoHeader" >
+        <h1>WHAT IN THE WORLD IS SYNESTHESIA???</h1>
+      </Row>
+      </Container>
+      <Row className="InfoParagraph" style={{ marginLeft: '30px', marginRight: '30px', marginBottom: '30px', color: 'lightgray' }}>
+        <span>{applySynesthesia("Synesthesia is a condition where stimulation in one sensory or cognitive pathway triggers automatic experiences in another pathway. For instance, individuals may see music, taste colors, or hear smells. At its peak, synesthesia fully integrates senses, offering a profound perception blend. Many experience mild synesthetic phenomena naturally in daily life. For instance, an individual with synesthesia may perceive shapes when hearing music or associate colors with specific words. This condition can impact various senses, encompassing sight, smell, taste, touch, and sound.")}</span>
+      </Row>
+      <Row className="SmallHeader">
+        <h5 className="text-center">Experience Grapheme-color Synesthesia<br />By Clicking Here</h5>
+      </Row>
+      <Container style={{ display: 'flex', justifyContent: 'center'}}>
+      <Row className="SynesthesiaToggle" style={{ marginBottom: '30px', marginTop: '20px' }}>
+        <Button 
+          onClick={toggleSynesthesia} 
+          style={{ 
+            backgroundColor: '#FFA54F', 
+            color: 'white', 
+            borderRadius: '5px',
+            width: 'fit-content',
+            }}
+            onMouseEnter={(e) => e.target.style.backgroundColor = '#D19290'}
+            onMouseLeave={(e) => e.target.style.backgroundColor = '#FFA54F'}
+            >
+          {synesthesiaEnabled ? "Disable Synesthesia" : "Enable Synesthesia"}
+        </Button>
+      </Row>
+      </Container>
+    </Container>
   );
 }
 
