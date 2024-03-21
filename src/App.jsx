@@ -1,6 +1,4 @@
 
-import React from 'react';
-import { useState } from 'react';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import './styles/App.css';
@@ -17,12 +15,10 @@ import Info from './Info.jsx';
 import Feedback from './Feedback.jsx';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
       <Header />
-    
       <Router>
         <Routes>
           <Route exact path="/" element={<p>home</p>} />
