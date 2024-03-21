@@ -8,19 +8,32 @@ Start time: N/A
 
 Finish time: N/A
 
-Actual time needed to complete: _____
+Actual time needed to complete: N/A
 
 *************************************************************************************************************************
 
 Name of feature: STYLING #2
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 3hrs
 
-Start time: _____
+Start time: N/A
 
-Finish time: _____
+Finish time: N/A
 
-Actual time needed to complete: _____
+Actual time needed to complete: N/A
+
+*************************************************************************************************************************
+
+Name of feature: STYLING #3
+
+Estimate of time needed to complete: 6hrs
+
+Start time: N/A
+
+Finish time: N/A
+
+Actual time needed to complete: 3hrs
+
 
 # Project Overview #
 
