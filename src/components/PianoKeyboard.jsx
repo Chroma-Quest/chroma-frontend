@@ -1,5 +1,5 @@
 import { Container, Row, Col, Button } from "react-bootstrap";
-import { useEffect, React } from "react";
+import { useEffect, useState } from "react";
 import C5 from '../assets/piano-sounds/mp3/Piano.ff.C5.mp3';
 import Csharp5 from '../assets/piano-sounds/mp3/Piano.ff.Db5.mp3';
 import D5 from '../assets/piano-sounds/mp3/Piano.ff.D5.mp3';
@@ -72,14 +72,12 @@ const labels_colors_notes = {
 }
 
 const PianoKeyboard = (props) => {
-  
   const handleKeyDown = async (event) => {
     if (keyBinds.includes(event.key)) {
-      
       new Audio(labels_colors_notes[event.key]['sound']).play();
       props.setColorsQueue([...props.colorsQueue, labels_colors_notes[event.key]['color']]);
+      
     }
-    
   }
 
   const handleClick = (key) => {
@@ -87,9 +85,9 @@ const PianoKeyboard = (props) => {
   }
 
   useEffect(() => {
-    console.log("hello")
-    
+    window.addEventListener("keydown", handleKeyDown);
   }, []);
+
 
   const whiteKeys = ["C", "D", "E", "F", "G", "A", "B", "C6"];
   const blackKeys = ["C#", "D#", "", "F#", "G#", "A#", ""];
@@ -98,9 +96,6 @@ const PianoKeyboard = (props) => {
   const topKeyBind = ["w", "e", "", "t", "y", "u",]
   const bottomKeyBind = ["a", "s", "d", "f", "g", "h", "j", "k"]
   const keyColors = ["#FFFF00", "#00FFFF", "#228B22", "#DC143C", "#87CEEB", "#9370DB", "#DAA520", "#008000", "#FF6F61", "#FF8C00", "#4B0082", "#FF007F", "#FFFF00"]
-
-  
-  window.addEventListener("keydown", handleKeyDown);
 
   return (
     <Container className="Container">
@@ -111,7 +106,7 @@ const PianoKeyboard = (props) => {
               <>
               <p className="black-key-desc"> {topKeyBind[index]} </p>
               <Button
-                variant="dark"
+                //variant="dark"
                 onClick={() => handleClick(blackKeys[index])}
                 className = "black-key-btn"
               >
@@ -120,7 +115,7 @@ const PianoKeyboard = (props) => {
               </>
             )}
             <Button
-              variant="light"
+              //variant="light"
               onClick={() => handleClick(key)}
               className="white-key-btn"
             >

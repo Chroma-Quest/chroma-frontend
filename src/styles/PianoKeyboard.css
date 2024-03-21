@@ -1,3 +1,4 @@
+
 .Container {
     height: 200px;
     width: 600px;
@@ -26,8 +27,6 @@
     text-align: center;
     font-weight: bold; /* Making font more bold */
     margin-left: -20px;
-
-
   }
   
   /* Black Key Button Style */
@@ -41,9 +40,17 @@
     text-align: center;
     background-color: #343a40; /* Assuming variant="dark" is similar to this color */
     border-radius: 0 0 5px 5px; /* Rounded corners */
+    border-color: #343a40;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4); /* Shadow */
     color: #fff; /* Assuming text color is white for dark variant */
     margin-left: -20px;
+  }
+
+  .black-key-btn:hover {
+    background-color: ;
+  }
+
+  .black-key-btn:active {
 
   }
   
@@ -63,6 +70,14 @@
     transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition */
     margin-left: -20px;
   }
+
+  .white-key-btn:hover {
+    opacity: 0.8; /* Reduce opacity on hover */
+  }
+
+  .white-key-btn:active {
+
+  }
   
   /* Key Binding Description Text Style */
   .key-bind-desc {
@@ -77,12 +92,5 @@
   }
   
   /* Animation for White Keys */
-  .white-key-btn:hover {
-    opacity: 0.8; /* Reduce opacity on hover */
-  }
   
-  /* Animation for White Keys when pressed */
-.white-key-btn:active {
-  transform: translateY(2px); /* Move the button down slightly when pressed */
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); /* Slightly reduce shadow */
-}
+  
