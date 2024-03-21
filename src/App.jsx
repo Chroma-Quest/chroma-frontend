@@ -15,6 +15,7 @@ import {
 import Simulator from './Simulator.jsx';
 import Info from './Info.jsx';
 import Feedback from './Feedback.jsx';
+import About from './About.jsx';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -27,7 +28,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<p>home</p>} />
           <Route exact path="/simulator" element={<Simulator />} />
-          <Route exact path="/about" element={<p>about</p>} />
+          <Route exact path="/about" element={<About />} />
           <Route exact path="/info" element={<Info />} />
           <Route exact path="/feedback" element={<Feedback />} />
         </Routes>
