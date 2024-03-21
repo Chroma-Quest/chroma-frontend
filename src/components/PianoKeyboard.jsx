@@ -1,6 +1,5 @@
-
 import { Container, Row, Col, Button } from "react-bootstrap";
-import { useEffect, React } from "react";
+import { useEffect } from "react";
 import C5 from '../assets/piano-sounds/mp3/Piano.ff.C5.mp3';
 import Csharp5 from '../assets/piano-sounds/mp3/Piano.ff.Db5.mp3';
 import D5 from '../assets/piano-sounds/mp3/Piano.ff.D5.mp3';
@@ -14,135 +13,130 @@ import A5 from '../assets/piano-sounds/mp3/Piano.ff.A5.mp3';
 import Asharp5 from '../assets/piano-sounds/mp3/Piano.ff.Bb5.mp3';
 import B5 from '../assets/piano-sounds/mp3/Piano.ff.B5.mp3';
 import C6 from '../assets/piano-sounds/mp3/Piano.ff.C6.mp3';
+import '../styles/PianoKeyboard.css';
 
+const labels_colors_notes = {
+  'C': {
+    color: "#FFFF00",
+    sound: C5,
+    key_bind: "a"
+  },
+  'C#': {
+    color: "#00FFFF",
+    sound: Csharp5,
+    key_bind: "w"
+  },
+  'D': {
+    color: "#228B22",
+    sound: D5,
+    key_bind: "s"
+  },
+  'D#': {
+    color: "#DC143C",
+    sound: Dsharp5,
+    key_bind: "e"
+  },
+  'E': {
+    color: "#87CEEB",
+    sound: E5,
+    key_bind: "d"
+  },
+  'F': {
+    color: "#9370DB",
+    sound: F5,
+    key_bind: "f"
+  },
+  'F#': {
+    color: "#DAA520",
+    sound: Fsharp5,
+    key_bind: "t"
+  },
+  'G': {
+    color: "#008000",
+    sound: G5,
+    key_bind: "g"
+  },
+  'G#': {
+    color: "#FF6F61",
+    sound: Gsharp5,
+    key_bind: "y"
+  },
+  'A': {
+    color: "#FF8C00",
+    sound: A5,
+    key_bind: "h"
+  },
+  'A#': {
+    color: "#4B0082",
+    sound: Asharp5,
+    key_binds: "u"
+  },
+  'B': {
+    color: "#FF007F",
+    sound: B5,
+    key_binds: "j"
+  },
+  'C6': {
+    color: "#FFFF00",
+    sound: C6,
+    key_bind: "k"
+  },
 
-const PianoKeyboard = () => {
-  
-  const handleKeyDown = (event) => {
-    switch (event.key) {
-      case 'a':
-        console.log('a')
-        new Audio(C5).play();
-        break;
-      case 'w':
-        new Audio(Csharp5).play();
-        break;
-      case 's':
-        console.log('s')
-        new Audio(D5).play();
-        break;
-      case 'e':
-        new Audio(Dsharp5).play();
-        break;
-      case 'd':
-        new Audio(E5).play();
-        break;
-      case 'f':
-        new Audio(F5).play();
-        break;
-      case 't':
-        new Audio(Fsharp5).play();
-        break;
-      case 'g':
-        new Audio(G5).play();
-        break;
-      case 'y':
-        new Audio(Gsharp5).play();
-        break;
-      case 'h':
-        new Audio(A5).play();
-        break;
-      case 'u':
-        new Audio(Asharp5).play();
-        break;
-      case 'j':
-        new Audio(B5).play();
-        break;
-      case 'k':
-        new Audio(C6).play();
-        break;
-      case ' ':
-        console.log("firework")
-        break
-      default:
-        console.log("NOT DEFINED");
-        console.log(event.key)
-        break;
+}
+
+const PianoKeyboard = (props) => {
+
+  useEffect(() => {
+    window.addEventListener("keydown", handleKeyDown);
+  }, []);
+
+  const handleKeyDown = async (event) => {
+    if (keyBinds.includes(event.key)) {
+      for (const note in labels_colors_notes) {
+        const { key_bind } = labels_colors_notes[note];
+        if (event.key == key_bind) {
+          document.getElementById(`key-${note}`).click()
+        }
+      }
     }
   }
 
-  const handleClick = (key) => {
-    console.log(key)
+  const handleClick = async (key) => {
+    new Audio(labels_colors_notes[key]['sound']).play();
+    props.setColorsQueue([...props.colorsQueue, labels_colors_notes[key]['color']]);
   }
 
-  useEffect(() => {
-    console.log("hello")
-    
-  }, []);
 
   const whiteKeys = ["C", "D", "E", "F", "G", "A", "B", "C6"];
   const blackKeys = ["C#", "D#", "", "F#", "G#", "A#", ""];
 
-  const keyBind = ["a", "w", "s", "e", "d", "f", "t", "g", "y", "h", "u", "j"];
+  const keyBinds = ["a", "w", "s", "e", "d", "f", "t", "g", "y", "h", "u", "j", "k"];
   const topKeyBind = ["w", "e", "", "t", "y", "u",]
   const bottomKeyBind = ["a", "s", "d", "f", "g", "h", "j", "k"]
-  const keyColors = ["#FFFF00", "#00FFFF", "#228B22", "#DC143C", "#87CEEB", "#9370DB", "#DAA520", "#008000", "#FF6F61", "#FF8C00", "#4B0082", "#FF007F", "#FFFF00"]
-
-  
-  window.addEventListener("keydown", handleKeyDown);
 
   return (
-    <Container style={{height: '200px', width: '700px'}}>
+    <Container className="Container">
       <Row className="justify-content-md-center">
         {whiteKeys.map((key, index) => (
-          <Col key={index} xs="auto" style={{ position: 'relative', height: '100px', width: '60px', margin: '10px 1px' }}>
+          <Col key={index} xs="auto" className="white-key-col">
             {blackKeys[index] && (
               <>
-              <p style={{position: 'absolute',
-                  width: "75%",
-                  height: "60%",
-                  top: '0',
-                  left: '80%',
-                  color: 'darkslategrey',
-                  textAlign: 'center'}}> {topKeyBind[index]} </p>
-              <Button
-                variant="dark"
+              <p className="black-bind-label"> {topKeyBind[index]} </p>
+              <Button bsPrefix="black-key-btn"
                 onClick={() => handleClick(blackKeys[index])}
-                style={{
-                  position: 'absolute',
-                  width: "75%",
-                  height: "60%",
-                  top: '30px',
-                  left: '80%',
-                  zIndex: 1,
-                  textAlign: 'center'
-                }}
+                id={`key-${blackKeys[index]}`}
               >
                 {blackKeys[index]}
               </Button>
               </>
             )}
-            <Button
-              variant="light"
+            <Button bsPrefix="white-key-btn"
               onClick={() => handleClick(key)}
-              style={{ 
-                width: "100%", 
-                height: "100%", 
-                position: 'absolute',
-                top: '30px',
-                border: "2px solid black",
-                lineHeight: '150px',
-              }}
+              id={`key-${key}`}
             >
               {key}
             </Button>
-            <p style={{ 
-                position: 'absolute',
-                top: '135px',
-                textAlign: 'center',
-                width: '100%',
-                color: 'darkslategrey'
-              }}> {bottomKeyBind[index]} </p>
+            <p className="white-bind-label"> {bottomKeyBind[index]} </p>
           </Col>
         ))}
         <Col xs={2}></Col> {/* Empty column to center the keys */}

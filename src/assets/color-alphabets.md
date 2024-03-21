@@ -27,7 +27,7 @@ X - Xanadu (#738678)
 Y - Yellow (#FFFF00)
 Z - Zephyr Blue (#76B9D7)
 
-# Colors and Aplhabets #
+# Keyboard Colors and Aplhabets #
 
 C - Yellow Sunshine (#FFFF00)
 C# - Blue Electric (#00FFFF)

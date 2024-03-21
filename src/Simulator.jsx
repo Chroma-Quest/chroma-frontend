@@ -3,16 +3,12 @@ import FireworksCanvas from './components/FireworksCanvas.jsx';
 import PianoKeyboard from './components/PianoKeyboard.jsx';
 import './styles/App.css';
 
-
-
-
 function Simulator() {
-  const [count, setCount] = useState(0)
-
+  const [colorsQueue, setColorsQueue] = useState([])
   return (
     <>
-      <FireworksCanvas />
-      <PianoKeyboard />
+      <FireworksCanvas setColorsQueue={setColorsQueue} colorsQueue={colorsQueue} />
+      <PianoKeyboard setColorsQueue={setColorsQueue} colorsQueue={colorsQueue} />
     </>
   )
 }
