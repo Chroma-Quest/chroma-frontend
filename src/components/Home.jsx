@@ -6,7 +6,7 @@ function Home() {
   return (
     <div className="home-container">
     <main>
-      <h1>SENSATION SING IN COLORS</h1>
+      <h1>SENSATION SING IN COLORS</h1> 
       <div className="box" data-aos="fade-up" data-aos-delay="400">        
       <h2 style={{ fontSize: '34px', textAlign: 'center' }}>OUR VISION</h2>
         <p>At the forefront of innovation, our vision is to pioneer the advancement of testing methodologies for synesthesia, unlocking new dimensions of understanding in human perception. Through cutting-edge research and interdisciplinary collaboration, we aspire to develop comprehensive and standardized approaches that accurately capture and analyze synesthetic experiences.</p>
