@@ -2,13 +2,13 @@ import '../styles/FireworksCanvas.css'; // Import CSS file
 import '../styles/FireworksCanvas.css';
 import { useEffect, useState } from 'react';
 
-function FireworksCanvas() {
+function FireworksCanvas(props) {
     const [ctx, setCtx] = useState()
     const typecount = 3;
     let fireworks = [];								
     let particles = [];															
-    let frameRate = 60;							
-    let frameDelay = 1000.0/frameRate;
+    let frameRate = 20;							
+    let frameDelay = 1500.0/frameRate;
     
     const clientWidth = innerWidth;					
     const clientHeight = innerHeight;
@@ -21,27 +21,19 @@ function FireworksCanvas() {
             setCtx(canvas.getContext('2d'));
         }
 
-        function handleKeydown(event) {
-            if (event.code === "Space") {
-                createFirework("#008000");
-            } 
+        if (props.colorsQueue.length > 0) {
+            createFirework(props.colorsQueue[0]);
         }
 
-        window.addEventListener("keydown", handleKeydown);
         window.oncontextmenu = () => false; // Block right-click menu
 
-        const main = setInterval(() => {
+        setInterval(() => {
             if (ctx) {
                 update(frameDelay);
             }
         }, frameDelay);
-
-        // Cleanup on component unmount
-        return () => {
-            window.removeEventListener("keydown", handleKeydown);
-            clearInterval(main);
-        };
-    }, [ctx]);
+        
+    }, [ctx, props.colorsQueue]);
 
     // My function to create random number
     function random(min, max, round) {
@@ -54,7 +46,7 @@ function FireworksCanvas() {
 
 
     // Function to make firework
-    const createFirework = function(color) {
+    const createFirework = async function(color) {
         let firework = new Firework(color);
         fireworks.push(firework);
     }
