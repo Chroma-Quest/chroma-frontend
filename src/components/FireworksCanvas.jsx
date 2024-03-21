@@ -23,6 +23,7 @@ function FireworksCanvas(props) {
 
         if (props.colorsQueue.length > 0) {
             createFirework(props.colorsQueue[0]);
+            props.setColorsQueue(props.colorsQueue.splice(1))
         }
 
         window.oncontextmenu = () => false; // Block right-click menu

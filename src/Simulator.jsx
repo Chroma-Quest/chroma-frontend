@@ -7,7 +7,7 @@ function Simulator() {
   const [colorsQueue, setColorsQueue] = useState([])
   return (
     <>
-      <FireworksCanvas colorsQueue={colorsQueue} />
+      <FireworksCanvas setColorsQueue={setColorsQueue} colorsQueue={colorsQueue} />
       <PianoKeyboard setColorsQueue={setColorsQueue} colorsQueue={colorsQueue} />
     </>
   )

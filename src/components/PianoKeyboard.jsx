@@ -85,30 +85,26 @@ const labels_colors_notes = {
 }
 
 const PianoKeyboard = (props) => {
+
+  useEffect(() => {
+    window.addEventListener("keydown", handleKeyDown);
+  }, []);
+
   const handleKeyDown = async (event) => {
     if (keyBinds.includes(event.key)) {
       for (const note in labels_colors_notes) {
-        const { key_bind, color, sound } = labels_colors_notes[note];
+        const { key_bind } = labels_colors_notes[note];
         if (event.key == key_bind) {
-          new Audio(sound).play();
-          props.setColorsQueue([...props.colorsQueue, color]);
-          //document.getElementById(`key-${note}`).click()
+          document.getElementById(`key-${note}`).click()
         }
-
-        
       }
     }
   }
 
   const handleClick = async (key) => {
-    console.log(labels_colors_notes[key]['color'])
     new Audio(labels_colors_notes[key]['sound']).play();
     props.setColorsQueue([...props.colorsQueue, labels_colors_notes[key]['color']]);
   }
-
-  useEffect(() => {
-    window.addEventListener("keydown", handleKeyDown);
-  }, []);
 
 
   const whiteKeys = ["C", "D", "E", "F", "G", "A", "B", "C6"];
