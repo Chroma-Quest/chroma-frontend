@@ -1,12 +1,19 @@
 .box-container {
-    display: flex;
-    justify-content: flex-start;
+    display: inline-flex;
+    justify-content: center;
     flex-wrap: nowrap;
     margin-top: 20px;
     margin-bottom: 20px;
-    font-size: 40px;
+    font-size: 60px;
 }
 
+h1 {
+    font-family: 'Arial Black', sans-serif; /* Fancy font family */
+    font-weight: bold; /* Make the font bold */
+    text-shadow: 2px 2px 4px rgb(255, 255, 255); /* Add shadow effect */
+    text-align: center;
+
+  }
 .box {
     position: relative;
     overflow: hidden;
@@ -14,7 +21,7 @@
     border: 20px solid rgba(0, 0, 0, 0.4);
     padding: 10px;
     margin-bottom: 20px; /* Adjusted margin-bottom */
-    margin-top: 400px; /* Adjusted margin-top */
+    margin-top: 100px; /* Adjusted margin-top */
     transition: transform 0.3s ease, width 0.3s ease; /* Added width transition */
     flex: 0 0 auto;
     width: 300px; /* Reduced width */
@@ -22,20 +29,20 @@
     flex-direction: column; /* Added flex-direction column */
     align-items: center; /* Align items to the center */
     justify-content: center; /* Justify content to the center */
-    margin-left: 140px; /* Adjusted left margin */
-    margin-right: 60px; /* Adjusted right margin */
+    margin-left: 50px; /* Adjusted left margin */
+    margin-right: 50px; /* Adjusted right margin */
     animation: box-animation 1s infinite alternate;
     color: rgb(0, 0, 0);
-    font-size: 20px;
+    font-size: 25px;
     text-align: center; /* Align text inside the box to the center */
     display: inline-flex;
 }
 
 .box:hover {
     transform: scale(1.05);
-    width: 400px; /* Widened width on hover */
-    height: 500px;
-    transition: transform 1.0s ease, width 1.0s ease, height 1.0s ease; /* Adjusted transition duration */
+    width: 600px; /* Widened width on hover */
+    height: 400px;
+    transition: transform 0.2s ease, width 1.0s ease, height 0.2s ease; /* Adjusted transition duration */
 }
 
 .box::before {
