@@ -1,5 +1,5 @@
 import { Container, Row, Col, Button } from "react-bootstrap";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import C5 from '../assets/piano-sounds/mp3/Piano.ff.C5.mp3';
 import Csharp5 from '../assets/piano-sounds/mp3/Piano.ff.Db5.mp3';
 import D5 from '../assets/piano-sounds/mp3/Piano.ff.D5.mp3';
@@ -16,57 +16,70 @@ import C6 from '../assets/piano-sounds/mp3/Piano.ff.C6.mp3';
 import '../styles/PianoKeyboard.css';
 
 const labels_colors_notes = {
-  'a': {
+  'C': {
     color: "#FFFF00",
     sound: C5,
+    key_bind: "a"
   },
-  'w': {
+  'C#': {
     color: "#00FFFF",
     sound: Csharp5,
+    key_bind: "w"
   },
-  's': {
+  'D': {
     color: "#228B22",
     sound: D5,
+    key_bind: "s"
   },
-  'e': {
+  'D#': {
     color: "#DC143C",
-    sound: Csharp5,
+    sound: Dsharp5,
+    key_bind: "e"
   },
-  'd': {
+  'E': {
     color: "#87CEEB",
     sound: E5,
+    key_bind: "d"
   },
-  'f': {
+  'F': {
     color: "#9370DB",
     sound: F5,
+    key_bind: "f"
   },
-  't': {
+  'F#': {
     color: "#DAA520",
     sound: Fsharp5,
+    key_bind: "t"
   },
-  'g': {
+  'G': {
     color: "#008000",
     sound: G5,
+    key_bind: "g"
   },
-  'y': {
+  'G#': {
     color: "#FF6F61",
     sound: Gsharp5,
+    key_bind: "y"
   },
-  'h': {
+  'A': {
     color: "#FF8C00",
     sound: A5,
+    key_bind: "h"
   },
-  'u': {
+  'A#': {
     color: "#4B0082",
     sound: Asharp5,
+    key_binds: "u"
   },
-  'j': {
+  'B': {
     color: "#FF007F",
     sound: B5,
+    key_binds: "j"
   },
-  'k': {
+  'C6': {
     color: "#FFFF00",
     sound: C6,
+    key_bind: "k"
   },
 
 }
@@ -74,14 +87,23 @@ const labels_colors_notes = {
 const PianoKeyboard = (props) => {
   const handleKeyDown = async (event) => {
     if (keyBinds.includes(event.key)) {
-      new Audio(labels_colors_notes[event.key]['sound']).play();
-      props.setColorsQueue([...props.colorsQueue, labels_colors_notes[event.key]['color']]);
-      
+      for (const note in labels_colors_notes) {
+        const { key_bind, color, sound } = labels_colors_notes[note];
+        if (event.key == key_bind) {
+          new Audio(sound).play();
+          props.setColorsQueue([...props.colorsQueue, color]);
+          //document.getElementById(`key-${note}`).click()
+        }
+
+        
+      }
     }
   }
 
-  const handleClick = (key) => {
-    console.log(key)
+  const handleClick = async (key) => {
+    console.log(labels_colors_notes[key]['color'])
+    new Audio(labels_colors_notes[key]['sound']).play();
+    props.setColorsQueue([...props.colorsQueue, labels_colors_notes[key]['color']]);
   }
 
   useEffect(() => {
@@ -95,7 +117,6 @@ const PianoKeyboard = (props) => {
   const keyBinds = ["a", "w", "s", "e", "d", "f", "t", "g", "y", "h", "u", "j", "k"];
   const topKeyBind = ["w", "e", "", "t", "y", "u",]
   const bottomKeyBind = ["a", "s", "d", "f", "g", "h", "j", "k"]
-  const keyColors = ["#FFFF00", "#00FFFF", "#228B22", "#DC143C", "#87CEEB", "#9370DB", "#DAA520", "#008000", "#FF6F61", "#FF8C00", "#4B0082", "#FF007F", "#FFFF00"]
 
   return (
     <Container className="Container">
@@ -104,24 +125,22 @@ const PianoKeyboard = (props) => {
           <Col key={index} xs="auto" className="white-key-col">
             {blackKeys[index] && (
               <>
-              <p className="black-key-desc"> {topKeyBind[index]} </p>
-              <Button
-                //variant="dark"
+              <p className="black-bind-label"> {topKeyBind[index]} </p>
+              <Button bsPrefix="black-key-btn"
                 onClick={() => handleClick(blackKeys[index])}
-                className = "black-key-btn"
+                id={`key-${blackKeys[index]}`}
               >
                 {blackKeys[index]}
               </Button>
               </>
             )}
-            <Button
-              //variant="light"
+            <Button bsPrefix="white-key-btn"
               onClick={() => handleClick(key)}
-              className="white-key-btn"
+              id={`key-${key}`}
             >
               {key}
             </Button>
-            <p className="key-bind-desc"> {bottomKeyBind[index]} </p>
+            <p className="white-bind-label"> {bottomKeyBind[index]} </p>
           </Col>
         ))}
         <Col xs={2}></Col> {/* Empty column to center the keys */}
