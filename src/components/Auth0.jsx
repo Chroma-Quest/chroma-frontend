@@ -1,23 +1,23 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Auth0Provider } from '@auth0/auth0-react';
-import PrivateRoute from './Auth0PrivateRoute'; // not entirely sure what this does
-import Profile from './Auth0Profile';
-import Login from './Auth0Login';
-import Logout from './Auth0Logout';
+import PrivateRoute from './Auth0PrivateRoute.jsx'; // not entirely sure what this does
+import Profile from './Auth0Profile.jsx';
+import Login from './Auth0Login.jsx';
+import Logout from './Auth0Logout.jsx';
 
-// add env thingys below
-const domain = ;
-const clientId = ;
-const audience = ;
+const DOMAIN = import.meta.env.VITE_AUTH0_DOMAIN;
+const CLIENT_ID = import.meta.env.VITE_AUTH0_CLIENT_ID;
+const REDIRCT_URI = import.meta.env.VITE_AUTH0_REDIRECT_URI;
+const AUDIENCE = import.meta.env.VITE_AUTH0_AUDI_ID;
 
-const App = () => {
+const Auth = () => {
     return (
         <Auth0Provider
-          domain={domain}
-          clientId={clientId}
-          redirectUri={window.location.origin}
-          audience={audience}
+          domain={DOMAIN}
+          clientId={CLIENT_ID}
+          redirectUri={REDIRCT_URI}//{window.location.origin}
+          audience={AUDIENCE}
         >
             {/* this needs to be revisited */}
           <Router>
@@ -31,4 +31,4 @@ const App = () => {
       );
     };
 
-export default App;
+export default Auth;
