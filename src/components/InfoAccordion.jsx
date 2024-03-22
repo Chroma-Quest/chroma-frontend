@@ -40,49 +40,49 @@ function InfoAccordion() {
                     marginLeft: '30px',
                     }}>
                     <Accordion defaultActiveKey="0">
-                        <Accordion.Item eventKey="0">
+                        <Accordion.Item eventKey="0" bsPrefix='dark-accordion-item'>
                             <Accordion.Header>Auditory-Tactile Synesthesia</Accordion.Header>
                             <Accordion.Body>
                             This occurs when certain sounds elicit specific bodily sensations. For instance, hearing a loud noise might cause tingling on the back of one's neck.
                             </Accordion.Body>
                         </Accordion.Item>
-                        <Accordion.Item eventKey="1">
+                        <Accordion.Item eventKey="1" bsPrefix='dark-accordion-item'>
                             <Accordion.Header>Chromesthesia</Accordion.Header>
                             <Accordion.Body>
                             This type of synesthesia involves associating colors with certain sounds. For example, hearing a car honking might trigger the perception of vibrant colors.
                             </Accordion.Body>
                         </Accordion.Item>
-                        <Accordion.Item eventKey="2">
+                        <Accordion.Item eventKey="2" bsPrefix='dark-accordion-item'>
                             <Accordion.Header>Grapheme-color Synesthesia</Accordion.Header>
                             <Accordion.Body>
                             Individuals experiencing this form perceive letters and numbers with particular colors. For instance, they might consistently see the letter "A" as red and the number "7" as yellow.
                             </Accordion.Body>
                         </Accordion.Item>
-                        <Accordion.Item eventKey="3">
+                        <Accordion.Item eventKey="3" bsPrefix='dark-accordion-item'>
                             <Accordion.Header>Lexical-gustatory Synesthesia</Accordion.Header>
                             <Accordion.Body>
                             In this variation, hearing certain words evokes distinct tastes. For example, hearing the word "chocolate" might bring about the sensation of sweetness on the palate.
                             </Accordion.Body>
                         </Accordion.Item>
-                        <Accordion.Item eventKey="4">
+                        <Accordion.Item eventKey="4" bsPrefix='dark-accordion-item'>
                             <Accordion.Header >Mirror-touch Synesthesia</Accordion.Header>
                             <Accordion.Body>
                             This unique form involves feeling sensations on one's own body when observing others being touched. For instance, witnessing someone receiving a hug might cause the synesthete to feel the physical sensation of being hugged themselves.
                             </Accordion.Body>
                         </Accordion.Item>
-                        <Accordion.Item eventKey="5">
+                        <Accordion.Item eventKey="5" bsPrefix='dark-accordion-item'>
                             <Accordion.Header>Number Form</Accordion.Header>
                             <Accordion.Body>
                             Individuals with this type have a mental map of numbers that automatically appears when they think of numbers. For example, they might visualize numbers arranged in a specific spatial pattern, such as a spiral or a line.
                             </Accordion.Body>
                         </Accordion.Item>
-                        <Accordion.Item eventKey="6">
+                        <Accordion.Item eventKey="6" bsPrefix='dark-accordion-item'>
                             <Accordion.Header>Ordinal Linguistic Personification</Accordion.Header>
                             <Accordion.Body>
                             This form associates ordered sequences, like days of the week, with personalities or genders. For instance, someone might perceive Monday as stern or masculine, while Friday might be seen as more jovial or feminine.
                             </Accordion.Body>
                         </Accordion.Item>
-                        <Accordion.Item eventKey="7">
+                        <Accordion.Item eventKey="7" bsPrefix='dark-accordion-item'>
                             <Accordion.Header>Spatial Sequence Synesthesia</Accordion.Header>
                             <Accordion.Body>
                             This variation involves perceiving numbers or numerical sequences as points in space. For example, individuals may visualize numbers arranged close together or far apart, depending on their numerical value.
@@ -115,49 +115,49 @@ function InfoAccordion() {
                     marginLeft: '15px',
                     }}>
                     <Accordion defaultActiveKey="0">
-                        <Accordion.Item eventKey="0">
+                        <Accordion.Item eventKey="0" bsPrefix='dark-accordion-item'>
                             <Accordion.Header>Who is a Synesthete?</Accordion.Header>
                             <Accordion.Body>
                             A synesthete is an individual who consistently reports experiencing synesthesia throughout their life. Many view synesthesia as a distinctive gift, enabling them to perceive the world through a fusion of multiple senses.                        
                             </Accordion.Body>
                         </Accordion.Item>
-                        <Accordion.Item eventKey="1">
+                        <Accordion.Item eventKey="1" bsPrefix='dark-accordion-item'>
                             <Accordion.Header>How Prevalent is Synesthesia?</Accordion.Header>
                             <Accordion.Body>
                             Approximately 3 to 5 percent of the population is estimated to have some form of synesthesia, with women more frequently identified as synesthetes than men.                        
                             </Accordion.Body>
                         </Accordion.Item>
-                        <Accordion.Item eventKey="2">
+                        <Accordion.Item eventKey="2" bsPrefix='dark-accordion-item'>
                             <Accordion.Header>Is Synesthesia Innate?</Accordion.Header>
                             <Accordion.Body>
                             Synesthesia typically emerges in early childhood and is believed to have a genetic basis. There is ongoing debate as to whether everyone is born with some level of synesthetic ability or if it's a unique perceptual trait shared by select individuals.                        
                             </Accordion.Body>
                         </Accordion.Item>
-                        <Accordion.Item eventKey="3">
+                        <Accordion.Item eventKey="3" bsPrefix='dark-accordion-item'>
                             <Accordion.Header>Can Synesthesia Develop Suddenly?</Accordion.Header>
                             <Accordion.Body>
                             In rare instances, synesthesia may develop later in life, either temporarily due to factors like psychedelic drug use, meditation, or sensory deprivation, or permanently following events such as head trauma, strokes, or brain tumors.
                             </Accordion.Body>
                         </Accordion.Item>
-                        <Accordion.Item eventKey="4">
+                        <Accordion.Item eventKey="4" bsPrefix='dark-accordion-item'>
                             <Accordion.Header >What are the Advantages of Synesthesia?</Accordion.Header>
                             <Accordion.Body>
                             Research suggests that synesthetes often possess more vivid mental imagery and demonstrate enhanced creative thinking, potentially linked to increased brain connectivity and ease with metaphors.
                             </Accordion.Body>
                         </Accordion.Item>
-                        <Accordion.Item eventKey="5">
+                        <Accordion.Item eventKey="5" bsPrefix='dark-accordion-item'>
                             <Accordion.Header>Is Synesthesia a Mental Disorder?</Accordion.Header>
                             <Accordion.Body>
                             No, synesthesia is not classified as a mental illness; rather, it's regarded as a distinctive sensory phenomenon, offering a novel perspective on the world through the blending of senses.
                             </Accordion.Body>
                         </Accordion.Item>
-                        <Accordion.Item eventKey="6">
+                        <Accordion.Item eventKey="6" bsPrefix='dark-accordion-item'>
                             <Accordion.Header>Does Synesthesia have a Hereditary Component?</Accordion.Header>
                             <Accordion.Body>
                             Yes, there appears to be a genetic influence on synesthesia, as it can be passed down from one generation to another within families.
                             </Accordion.Body>
                         </Accordion.Item>
-                        <Accordion.Item eventKey="7">
+                        <Accordion.Item eventKey="7" bsPrefix='dark-accordion-item'>
                             <Accordion.Header>Who First Documented Synesthesia?</Accordion.Header>
                             <Accordion.Body>
                             The earliest mentions of synesthesia date back to the 19th century, notably recorded by scientist Francis Galton, although systematic research into the phenomenon did not begin until the late 20th century.
