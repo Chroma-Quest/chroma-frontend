@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, Redirect} from 'react-router-dom';
+import {Route, redirect} from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
 
 // CHAT GPT review with jacob!!
@@ -11,12 +11,12 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
     }
   
     return (
+      isAuthenticated ?
       <Route
         {...rest}
-        render={(props) =>
-          isAuthenticated ? <Component {...props} /> : <Redirect to="/login" />
-        }
+        render={(props) => <Component {...props} />}
       />
+      : redirect('/login')
     );
   };
   
