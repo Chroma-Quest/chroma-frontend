@@ -10,8 +10,7 @@ function FeedbackForm() {
           <iframe
             width="1200"
             height="675"
-            src="https://kyhbse2ktpm.typeform.com/to/ytoSAgtK"
-            title="GeeksforGeeks"
+            src="https://kyhbse2ktpm.typeform.com/to/spit1PQa"
           ></iframe>
         </div>
       </div>
