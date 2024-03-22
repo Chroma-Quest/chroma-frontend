@@ -27,11 +27,9 @@ h1 {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    margin: 4px 2px;
+    margin: 50px auto 70px;
     cursor: pointer;
     border-radius: 90%; /* Make it circular */
-    margin-top: 50px;
-    margin-bottom: 70px;
     transition: transform 0.5s, background-color 0.5s; /* Add transition effects */
     position: relative; /* Position for decorations */
 }

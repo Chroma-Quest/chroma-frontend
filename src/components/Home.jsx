@@ -33,7 +33,7 @@ function Home() {
           </div>
         </div>
       </main>
-      <button className="login-button">Log In</button>
+      {/* <button className="login-button">Log In</button> */}
     </div>
   );
 }
