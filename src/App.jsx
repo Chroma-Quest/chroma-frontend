@@ -38,8 +38,8 @@ function App() {
         <Router>
           <AuthButtons/>
           <Routes>
-          {isAuthenticated ? (
-            <>
+          {/* {isAuthenticated ? (
+            <> */}
               {/* Auth0 Start routes */}
               <Route exact path="/profile" element={<Profile/>}/>
               {/* Auth0 End routes */}
@@ -48,10 +48,10 @@ function App() {
               <Route exact path="/about" element={<About />} />
               <Route exact path="/info" element={<Info />} />
               <Route exact path="/feedback" element={<Feedback />} />
-            </>
+            {/* </>
           ) : (
             <Route path="/" element={<Home />} />
-            )}
+            )} */}
           </Routes>
         </Router>
       </div>
