@@ -45,7 +45,10 @@ function ColorLetters() {
       <Row className="SmallHeader">
         <h5 className="text-center">Experience Grapheme-color Synesthesia<br />By Clicking Here</h5>
       </Row>
-      <Container style={{ display: 'flex', justifyContent: 'center'}}>
+      <Container style={{ 
+        display: 'flex', 
+        justifyContent: 'center',
+        }}>
       <Row className="SynesthesiaToggle" style={{ marginBottom: '30px', marginTop: '20px' }}>
         <Button 
           onClick={toggleSynesthesia} 

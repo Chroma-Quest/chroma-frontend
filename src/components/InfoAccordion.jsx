@@ -169,6 +169,23 @@ function InfoAccordion() {
         </div>
         <div style={{
             display: 'flex',
+            justifyContent: 'center',
+        }}>
+            <div style={{
+                display: 'flex',
+                justifyContent: 'center',
+                backgroundColor: 'gray',
+                marginTop: '60px',
+                width: 'fit-content',
+                borderRadius: '5px',
+                paddingRight: '30px',
+                paddingLeft: '30px',
+            }}>
+            <h1>Some Famous Celebrities with Synesthesia</h1>
+            </div>
+        </div>
+        <div style={{
+            display: 'flex',
             margin: '30px',
             justifyContent: 'space-evenly'
         }}>
