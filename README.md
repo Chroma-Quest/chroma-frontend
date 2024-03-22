@@ -21,6 +21,7 @@
 03-19-2024 2:00pm Added color to letters feature with toggle button on Info page.
 03-19-2024 5:00pm Fixed ghosting of fireworks on the canvas.
 03-20-2024 2:00pm Added content and styling to info page.
+03-21-2024 9:30pm completed info page layout and styling.
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
@@ -90,13 +91,13 @@ Actual time needed to complete: 3 hours
 
 Name of feature: Info page content, styling and layout
 
-Estimate of time needed to complete: ______
+Estimate of time needed to complete: 3 Hours
 
-Start time: ________
+Start time: 7:00pm
 
-Finish time: _______
+Finish time: 9:30pm
 
-Actual time needed to complete: _______
+Actual time needed to complete: 2.5 Hours
 
 
 # Project Overview #
