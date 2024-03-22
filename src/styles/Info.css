@@ -1,0 +1,11 @@
+.dark-accordion-item {
+    background-color: gray;
+    border-radius: 5px;
+    border: thin black solid;
+    min-height: 50px;
+}
+.span-paragraph {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+}

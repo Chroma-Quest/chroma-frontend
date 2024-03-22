@@ -1,17 +1,15 @@
 "use strict";
-import { React, useState } from 'react';
+
 
 function FeedbackForm() {
     return (
-      <div className="Feedback">
+      <div>
         <div>
-          <h2 style={{ color: 'blue' }}>Survey</h2>
-          <h2>Please look below to complete a satisfaction survey</h2>
+          <h2 style={{width: 'max-content', margin: 'auto', padding: '20px', color: 'white'}}>Please complete the satisfaction survey below </h2>
           <iframe
-            width="1200"
-            height="675"
-            src="https://kyhbse2ktpm.typeform.com/to/ytoSAgtK"
-            title="GeeksforGeeks"
+            style={{display: 'block', margin: 'auto', width: '1200px', height: '700px'}}
+            src="https://kyhbse2ktpm.typeform.com/to/spit1PQa"
+            title="Chroma Feedback"
           ></iframe>
         </div>
       </div>

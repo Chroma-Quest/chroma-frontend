@@ -69,12 +69,12 @@ const labels_colors_notes = {
   'A#': {
     color: "#4B0082",
     sound: Asharp5,
-    key_binds: "u"
+    key_bind: "u"
   },
   'B': {
     color: "#FF007F",
     sound: B5,
-    key_binds: "j"
+    key_bind: "j"
   },
   'C6': {
     color: "#FFFF00",
@@ -105,7 +105,6 @@ const PianoKeyboard = (props) => {
     new Audio(labels_colors_notes[key]['sound']).play();
     props.setColorsQueue([...props.colorsQueue, labels_colors_notes[key]['color']]);
   }
-
 
   const whiteKeys = ["C", "D", "E", "F", "G", "A", "B", "C6"];
   const blackKeys = ["C#", "D#", "", "F#", "G#", "A#", ""];
