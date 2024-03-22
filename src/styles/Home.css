@@ -26,12 +26,13 @@ h1 {
     padding: 20px; /* Increase padding for decoration */
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     margin: 50px auto 70px;
     cursor: pointer;
     border-radius: 90%; /* Make it circular */
     transition: transform 0.5s, background-color 0.5s; /* Add transition effects */
     position: relative; /* Position for decorations */
+    display: flex;
+    justify-content: center ;
 }
 
 /* Decoration */
