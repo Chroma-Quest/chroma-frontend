@@ -22,6 +22,7 @@
 03-19-2024 5:00pm Fixed ghosting of fireworks on the canvas.
 03-20-2024 2:00pm Added content and styling to info page.
 03-21-2024 9:30pm completed info page layout and styling.
+03-22/2024 10:30am added gray background to info page accordion.
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
@@ -98,6 +99,18 @@ Start time: 7:00pm
 Finish time: 9:30pm
 
 Actual time needed to complete: 2.5 Hours
+
+*************************************************************************************************************************
+
+Name of feature: Info page styling
+
+Estimate of time needed to complete: 30 mins
+
+Start time: 9:00am
+
+Finish time: 9:30am
+
+Actual time needed to complete: 30 mins
 
 
 # Project Overview #

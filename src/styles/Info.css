@@ -1,0 +1,6 @@
+.dark-accordion-item {
+    background-color: gray;
+    border-radius: 5px;
+    border: thin black solid;
+    min-height: 50px;
+}
