@@ -3,6 +3,7 @@ import { bottom } from '@popperjs/core';
 import { React, useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col, Button } from 'react-bootstrap';
+import '../styles/Info.css';
 
 
 function ColorLetters() {
@@ -40,7 +41,7 @@ function ColorLetters() {
       </Row>
       </Container>
       <Row className="InfoParagraph" style={{ marginLeft: '30px', marginRight: '30px', marginBottom: '30px', color: 'lightgray' }}>
-        <span>{applySynesthesia("Synesthesia is a condition where stimulation in one sensory or cognitive pathway triggers automatic experiences in another pathway. For instance, individuals may see music, taste colors, or hear smells. At its peak, synesthesia fully integrates senses, offering a profound perception blend. Many experience mild synesthetic phenomena naturally in daily life. For instance, an individual with synesthesia may perceive shapes when hearing music or associate colors with specific words. This condition can impact various senses, encompassing sight, smell, taste, touch, and sound.")}</span>
+        <span className='span-paragraph'>{applySynesthesia("Synesthesia is a condition where stimulation in one sensory or cognitive pathway triggers automatic experiences in another pathway. For instance, individuals may see music, taste colors, or hear smells. At its peak, synesthesia fully integrates senses, offering a profound perception blend. Many experience mild synesthetic phenomena naturally in daily life. For instance, an individual with synesthesia may perceive shapes when hearing music or associate colors with specific words. This condition can impact various senses, encompassing sight, smell, taste, touch, and sound.")}</span>
       </Row>
       <Row className="SmallHeader">
         <h5 className="text-center">Experience Grapheme-color Synesthesia<br />By Clicking Here</h5>
