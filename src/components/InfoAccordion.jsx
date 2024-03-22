@@ -1,7 +1,7 @@
 "use strict"
 
 import { bottom } from '@popperjs/core';
-import { React, } from 'react';
+import React from 'react';
 import {Accordion, Card} from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 import '../styles/Info.css';
