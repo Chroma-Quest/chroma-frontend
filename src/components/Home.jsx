@@ -6,7 +6,7 @@ function Home() {
   return (
     <div className="home-container">
       <main>
-        <h1 style={{ fontSize: '50px', marginTop: '40px', display: 'block' }}>&quot;SENSATION SING IN COLORS&quot;</h1>
+        <h1 style={{ fontSize: '50px', marginTop: '40px', display: 'block' }}>&quot;SENSATIONS SING IN COLORS&quot;</h1>
         {/* Login button added here */}
         <div style={{ display: 'block', margin: 'auto', width: 'max-content' }}>
           <div className="box" data-aos="fade-up" data-aos-delay="400">        
