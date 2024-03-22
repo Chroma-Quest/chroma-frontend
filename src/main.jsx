@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
+import { Auth0Provider } from '@auth0/auth0-react';
 // import Auth from './components/Auth0.jsx'; 
 import './styles/index.css';
 import './styles/App.css';
-import { Auth0Provider } from '@auth0/auth0-react';
 
 const CLIENT_ID = import.meta.env.VITE_AUTH0_CLIENT_ID;
+// eslint-disable-next-line react-refresh/only-export-components
 const DOMAIN = import.meta.env.VITE_AUTH0_DOMAIN;
 const REDIRCT_URI = import.meta.env.VITE_AUTH0_REDIRECT_URI;
 // const AUDIENCE = import.meta.env.VITE_AUTH0_AUDI_ID;

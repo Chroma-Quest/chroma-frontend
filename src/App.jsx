@@ -1,5 +1,11 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from 'react-router-dom';
+import { useAuth0 } from "@auth0/auth0-react";
 // import PrivateRoute from './components/auth/Auth0PrivateRoute.jsx';
 import AuthButtons from './components/auth/AuthButtons.jsx';
 import Profile from './components/auth/Auth0Profile.jsx';
@@ -12,16 +18,10 @@ import './styles/App.css';
 import './styles/Header.css';
 import './styles/index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route
-} from 'react-router-dom';
 import Simulator from './Simulator.jsx';
 import Info from './Info.jsx';
 import Feedback from './Feedback.jsx';
 import About from './About.jsx';
-import { useAuth0 } from "@auth0/auth0-react";
 
 function App() {
   let { isLoading, isAuthenticated } = useAuth0();
@@ -41,7 +41,7 @@ function App() {
           {isAuthenticated ? (
             <>
               {/* Auth0 Start routes */}
-              <Route exact path="/profile" component={<Profile/>}/>
+              <Route exact path="/profile" element={<Profile/>}/>
               {/* Auth0 End routes */}
               <Route exact path="/" element={<Home />} />
               <Route exact path="/simulator" element={<Simulator />} />
