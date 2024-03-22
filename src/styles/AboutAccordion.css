@@ -1,0 +1,32 @@
+.custom-accordion {
+    background-color: black;
+}
+
+.custom-accordion-item {
+    background-color: black;
+}
+
+.custom-accordion-body {
+    color: white;
+}
+
+.custom-card {
+    background-color: gray;
+    color: rgb(0, 0, 0);
+}
+
+.custom-card .card-title {
+    color: black;
+}
+
+.dark-accordion-item {
+    background-color: gray;
+    border-radius: 5px;
+    border: thin black solid;
+    min-height: 50px;
+}
+.custom-accordion-header,
+.custom-card .card-title,
+.custom-accordion-body {
+    font-size: 20px; /* Adjust the font size as needed */
+}
