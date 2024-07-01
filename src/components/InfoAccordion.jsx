@@ -1,7 +1,5 @@
 "use strict"
 
-import { bottom } from '@popperjs/core';
-import React from 'react';
 import {Accordion, Card} from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 import '../styles/Info.css';
@@ -190,7 +188,7 @@ function InfoAccordion() {
             justifyContent: 'space-evenly'
         }}>
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src="./Assets/KANYE.webp" />
+                <Card.Img variant="top" src="./src/assets/KANYE.webp" />
                 <Card.Body>
                     <Card.Title>Kanye West</Card.Title>
                     <Card.Text>
@@ -199,7 +197,7 @@ function InfoAccordion() {
                 </Card.Body>
             </Card>
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src="./Assets/DUKE.jpg" />
+                <Card.Img variant="top" src="./src/assets/DUKE.jpg" />
                 <Card.Body>
                     <Card.Title>Duke Ellington</Card.Title>
                     <Card.Text>
@@ -208,7 +206,7 @@ function InfoAccordion() {
                 </Card.Body>
             </Card>
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src="./Assets/MONROE.jpg" />
+                <Card.Img variant="top" src="./src/assets/MONROE.jpg" />
                 <Card.Body>
                     <Card.Title>Marilyn Monroe</Card.Title>
                     <Card.Text>
@@ -217,7 +215,7 @@ function InfoAccordion() {
                 </Card.Body>
             </Card>
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src="./Assets/RUSH.jpg" />
+                <Card.Img variant="top" src="./src/assets/RUSH.jpg" />
                 <Card.Body>
                     <Card.Title>Geoffrey Rush</Card.Title>
                     <Card.Text>

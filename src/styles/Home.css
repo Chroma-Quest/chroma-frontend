@@ -105,7 +105,7 @@ h1 {
     left: 20;
     width: 180%;
     height: 180%;
-    background-image: url('https://th.bing.com/th/id/OIG4.AIYX1Llgyuu4PmEhXDks?pid=ImgGn'); /* Add your image path here */
+    background-image: url('./src/assets/OurVision.jpg'); /* Add your image path here */
     background-size: cover;
     transition: opacity 0.3s ease; /* Added transition for opacity */
     z-index: 1; /* Ensure the image is above the content */

@@ -1,8 +1,8 @@
 
 # Project Name
 
-**Author**: Kawika Reveira, Justin Cheeseman, Ahmed Elnogoumi, Mak Trnka, Brock Britton, John Gause
-**Version**: 1.0.2
+**Authors**: Kawika Reveira, Justin Cheeseman, Ahmed Elnogoumi, Mak Trnka, Brock Britton, John Gause  
+**Version**: 1.0.2  
 
 ## Overview
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
@@ -15,14 +15,14 @@
 
 ## Change Log #
 
-03-18-2024 11:07pm Updated README.md to add Documentation Template, Added Time estimates template.
-03-18-2024 2:00pm Added Header and Footer to App.jsx.
-03-19-2024 11:18am Added canvas and piano buttons to Simulator Page.
-03-19-2024 2:00pm Added color to letters feature with toggle button on Info page.
-03-19-2024 5:00pm Fixed ghosting of fireworks on the canvas.
-03-20-2024 2:00pm Added content and styling to info page.
-03-21-2024 9:30pm completed info page layout and styling.
-03-22/2024 10:30am added gray background to info page accordion.
+03-18-2024 11:07pm Updated README.md to add Documentation Template, Added Time estimates template.  
+03-18-2024 2:00pm Added Header and Footer to App.jsx.  
+03-19-2024 11:18am Added canvas and piano buttons to Simulator Page.  
+03-19-2024 2:00pm Added color to letters feature with toggle button on Info page.  
+03-19-2024 5:00pm Fixed ghosting of fireworks on the canvas.  
+03-20-2024 2:00pm Added content and styling to info page.  
+03-21-2024 9:30pm completed info page layout and styling.  
+03-22/2024 10:30am added gray background to info page accordion.  
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
@@ -121,6 +121,6 @@ Actual time needed to complete: 30 mins
 
 ![User Stories](<src/assets/User-Stories.png>)
 
-# Wireframe #
+# Wireframes #
 
-![Wireframe](src/assets/Wireframe.png)
+![Wireframes](src/assets/Wireframe.png)
